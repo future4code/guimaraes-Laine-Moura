@@ -27,7 +27,7 @@
 // let age = prompt('Qual é a sua idade?');
 // console.log(typeof name, typeof age);
 
-// f) string, number
+// f) string, string
 // g) 
 // let name = prompt('Qual é o seu nome?');
 // let age = prompt('Qual é a sua idade?');
