@@ -35,9 +35,16 @@
 // console.log(`Olá ${name}, você tem ${age} anos`)
 
 // Exercício 2
-// let perguntaAlmoco = prompt('Você já almoçou hoje?');
-// let perguntaExercicio = prompt('Você já se exercitou hoje?');
-// let perguntaHidratacao = prompt('Você já se hidratou hoje?');
+
+// let perguntaAlmoco = 'Você já almoçou hoje?';
+// let perguntaExercicio = 'Você já se exercitou hoje?';
+// let perguntaHidratacao = 'Você já se hidratou hoje?';
+
+// let respostaUm = prompt(perguntaAlmoco);
+// let respostaDois = prompt(perguntaExercicio);
+// let respostaTres = prompt(perguntaHidratacao);
+
+// console.log(perguntaAlmoco, respostaUm, perguntaExercicio, respostaDois, perguntaHidratacao, respostaTres);
 
 // Exercício 3
 // let a = 10;
