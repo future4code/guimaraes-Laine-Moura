@@ -189,7 +189,7 @@ function checaValidadeInscricaoLabenu(idade, ensino, disponibilidade) {
   } else {
     ensino = false
   }
-  disponibilidade = prompt('Você disponibilidade de horário?')
+  disponibilidade = prompt('Você possui disponibilidade de horário?')
   if (disponibilidade === 'sim') {
     disponibilidade = true
   } else {
