@@ -50,10 +50,12 @@ let frase = 'Então, minha querida Amélie, você não tem ossos de vidro. Pode 
 let array = frase.split(' ');
 console.log(array);
 
-*/
-
+2-
 let array = ["Banana", "Morango", "Abacaxi", "Laranja", "Ameixa"];
 console.log(`A posição do índice de "Abacaxi" é: ${array.indexOf('Abacaxi')}. O tamanho do array é:  ${array.length}`);
+*/
+
+
 
 
 
