@@ -30,8 +30,9 @@ console.log(comidasPreferidas[3]);
 console.log(comidasPreferidas[4]);
 
 comidasPreferidas[1] = prompt('Qual é a sua comida favorita?');
-console.log(comidasPreferidas);*/
+console.log(comidasPreferidas);
 
+3- 
 let listaDeTarefas = [];
 listaDeTarefas[0] = prompt('Diga uma tarefa');
 listaDeTarefas[1] = prompt('Diga uma tarefa');
@@ -40,4 +41,22 @@ console.log(listaDeTarefas);
 
 let indice = prompt(`Digite o índice da tarefa que você já realizou: 0 para ${listaDeTarefas[0]}, 1 para ${listaDeTarefas[1]} e 2 para ${listaDeTarefas[2]}`);
 listaDeTarefas.pop(indice)
-console.log(listaDeTarefas);
+console.log(listaDeTarefas);*/
+
+// DESAFIOS
+/* 
+1-
+let frase = 'Então, minha querida Amélie, você não tem ossos de vidro. Pode suportar os baques da vida.';
+let array = frase.split(' ');
+console.log(array);
+
+*/
+
+let array = ["Banana", "Morango", "Abacaxi", "Laranja", "Ameixa"];
+console.log(`A posição do índice de "Abacaxi" é: ${array.indexOf('Abacaxi')}. O tamanho do array é:  ${array.length}`);
+
+
+
+
+
+
