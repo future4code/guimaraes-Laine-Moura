@@ -34,16 +34,16 @@ ${comidasPreferidas[4]}`);
 comidasPreferidas[1] = prompt('Qual é a sua comida favorita?');
 console.log(comidasPreferidas);
 
-3- 
-let listaDeTarefas = [];
-listaDeTarefas[0] = prompt('Diga uma tarefa');
-listaDeTarefas[1] = prompt('Diga uma tarefa');
-listaDeTarefas[2] = prompt('Diga uma tarefa');
-console.log(listaDeTarefas);
+3- */
+// let listaDeTarefas = [];
+// listaDeTarefas[0] = prompt('Diga uma tarefa');
+// listaDeTarefas[1] = prompt('Diga uma tarefa');
+// listaDeTarefas[2] = prompt('Diga uma tarefa');
+// console.log(listaDeTarefas);
 
-let indice = prompt(`Digite o índice da tarefa que você já realizou: 0 para ${listaDeTarefas[0]}, 1 para ${listaDeTarefas[1]} e 2 para ${listaDeTarefas[2]}`);
-listaDeTarefas.pop(indice)
-console.log(listaDeTarefas);
+// let indice = prompt(`Digite o índice da tarefa que você já realizou: 0 para ${listaDeTarefas[0]}, 1 para ${listaDeTarefas[1]} e 2 para ${listaDeTarefas[2]}`);
+// listaDeTarefas.splice(indice, 1)
+// console.log(listaDeTarefas);
 
 // DESAFIOS
 /* 
