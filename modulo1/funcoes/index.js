@@ -67,3 +67,13 @@
 // }
 // tamanhoString(`A vida é bela!`)
 
+//3
+//a.
+// function soma(n1, n2) {
+    
+//     n1 = Number(prompt(`Insira um número`));
+//     n2 = Number(prompt(`Insira um número`));
+
+//     console.log(n1+n2);
+    
+// } soma()
