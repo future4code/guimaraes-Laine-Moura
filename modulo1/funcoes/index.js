@@ -63,7 +63,7 @@
 //d.
 
 // function tamanhoString(string) {
-//     console.log(string.length);
+//     console.log(string.toLowerCase(), string.length);
 // }
 // tamanhoString(`A vida é bela!`)
 
