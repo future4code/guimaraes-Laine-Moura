@@ -43,20 +43,23 @@
 //a.
 
 // function soma(n1, n2) {
-//     console.log(n1+n2);
-// } soma(5, 3)
+// let somar = n1+n2
+// return somar
+// } console.log(soma(5, 3))
 
 //b.
 
 // function oNumeroEIgual(n1, n2) {
-//     console.log(n1>=n2);
+//  let compara = n1>=n2
+// return compara
 // } 
-// oNumeroEIgual(8,5)
+//console.log(oNumeroEIgual(8,5))
 
 //c.
 
 // function ePar(n1) {
-//     console.log(n1%2 === 0);
+// let par = n1%2 === 0;
+// return par
 // } 
 // ePar(5)
 
@@ -70,10 +73,49 @@
 //3
 //a.
 // function soma(n1, n2) {
-    
-//     n1 = Number(prompt(`Insira um número`));
-//     n2 = Number(prompt(`Insira um número`));
+// let somar = n1 + n2
+// return somar
+// }
 
-//     console.log(n1+n2);
-    
-// } soma()
+// function diferenca(n1, n2) {
+// let diminuir = n1 - n2
+// return diminuir
+// }
+
+// function multiplicacao(n1, n2) {
+// let multiplicar = n1 * n2
+// return multiplicar
+// }
+
+// function divisao(n1, n2) {
+// let dividir = n1 / n2
+// return dividir
+// }
+
+// let n1 = Number(prompt('Digite um número'));
+// let n2 = Number(prompt('Digite um número'));
+
+// console.log('Texto:', n1, n2);
+// console.log(`Texto:`, soma(n1,n2));
+// console.log(`Texto:`, diferenca(n1,n2));
+// console.log(`Texto:`, multiplicacao(n1,n2));
+// console.log(`Texto:`, divisao(n1,n2));
+
+// DESAFIOS
+// 1
+// a.
+// const exercicio = (n1, n2) => n1 * n2;
+// // console.log(exercicio(5,3));
+
+// // b.
+// const exercicio2 = (numero1, numero2) => numero1 + numero2;
+// console.log(exercicio2(2,3));
+// console.log(exercicio(exercicio2()))
+
+//2
+// function pitagoras(a, b) {
+//     let hipotenusa = a + b;
+
+//     return hipotenusa
+// }
+//     console.log(pitagoras(2,2));
