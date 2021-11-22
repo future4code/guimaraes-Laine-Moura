@@ -112,10 +112,8 @@
 // console.log(exercicio2(2,3));
 // console.log(exercicio(exercicio2()))
 
-//2
+// //2
 // function pitagoras(a, b) {
-//     let hipotenusa = a + b;
-
+//     let hipotenusa = Math.hypot(a, b);
 //     return hipotenusa
-// }
-//     console.log(pitagoras(2,2));
+// } console.log(pitagoras(3, 3));
