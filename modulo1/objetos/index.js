@@ -65,7 +65,23 @@ sem atribuição de valor.
 // console.log(retornaDados(pessoa1));
 // console.log(retornaDados(pessoa2));
 
- 
+ //3
+// let carrinho = [];
+// let frutas = [
+//     {nome: 'maçã', disponilidade: true},
+//     {nome: 'banana', disponilidade: true},
+//     {nome: 'jabuticaba', disponilidade: true},
+// ]
+
+// function temFruta(fruta) {  
+//     carrinho.push(fruta); 
+//     return fruta
+// }
+// console.log(temFruta(frutas[0]));
+// console.log(temFruta(frutas[1]));
+// console.log(temFruta(frutas[2]));
+
+// console.log(carrinho);
 
 
 
