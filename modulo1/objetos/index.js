@@ -18,4 +18,6 @@ b. Faz cópia de um objeto ou array inteiro
 //a.
 false
 undefined
+b. Foi chamadado 'backender' e ele tem um valor falso, por isso retornou falso. E a propriedade altura não foi definida, 
+sem atribuição de valor.
 */
