@@ -25,32 +25,49 @@ sem atribuição de valor.
 // EXERCÍCIOS DE ESCRITA DE CÓDIGO
 /*
 //1
-//a.
-let animaisFofinhos = {
-    nome: 'Pooh',
-    apelidos: ['ursinho', 'fofinho', 'amarelinho']};
+//a.*/
+// let animaisFofinhos = {
+//     nome: 'Pooh',
+//     apelidos: ['ursinho', 'fofinho', 'amarelinho']};
 
-function bichinhos() {
-    return animaisFofinhos;
+// function bichinhos(animal) {
+//     return animal
 
-}console.log(`Esse é o ursinho: ${animaisFofinhos.nome}. Também é chamado de: ${animaisFofinhos.apelidos}.`);
+// } console.log(bichinhos(`Esse é o ursinho: ${animaisFofinhos.nome}. Também é chamado de: ${animaisFofinhos.apelidos}.`));
+// //
 
- //b.
-  let animaisFofinhos = {
-    nome: 'Pooh',
-    apelidos: ['ursinho', 'fofinho', 'amarelinho']};
+//  //b.
 
-function bichinhos() {
-    return animaisFofinhos;
-
-}
-
-let novosAnimais = {
-    ...animaisFofinhos,
-    apelidos: ['pequeno', 'pelúcia', 'bichinho']
-}
-console.log(`Esse é o ursinho: ${novosAnimais.nome}. Também é chamado de: ${novosAnimais.apelidos}.`);
+// let novosAnimais = {
+//     ...animaisFofinhos,
+//     apelidos: ['pequeno', 'pelúcia', 'bichinho']
+// }
+// console.log(bichinhos(`Esse é o ursinho: ${novosAnimais.nome}. Também é chamado de: ${novosAnimais.apelidos}.`));
  
- */
+
+//2
+//a e b
+// let pessoa1 = {
+//     nome: 'Gabi',
+//     idade: 28,
+//     profissao: 'enfermeira'
+// }
+
+// let pessoa2 = {
+//     nome: 'Marcos',
+//     idade: 30,
+//     profissao: 'eletricista'
+// }
+
+// function retornaDados(pessoa) {
+//     return [pessoa.nome, pessoa.nome.length, pessoa.idade, pessoa.profissao, pessoa.profissao.length]  
+// } 
+// console.log(retornaDados(pessoa1));
+// console.log(retornaDados(pessoa2));
+
+ 
+
+
+
 
 
