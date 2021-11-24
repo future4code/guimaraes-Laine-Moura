@@ -31,18 +31,18 @@ sem atribuição de valor.
 //     apelidos: ['ursinho', 'fofinho', 'amarelinho']};
 
 // function bichinhos(animal) {
-//     return animal
+//     return `Esse é o ursinho: ${animal.nome}. Também é chamado de: ${animal.apelidos}.`
+// }
+// console.log(bichinhos(animaisFofinhos));
 
-// } console.log(bichinhos(`Esse é o ursinho: ${animaisFofinhos.nome}. Também é chamado de: ${animaisFofinhos.apelidos}.`));
-// //
 
-//  //b.
+// //  //b.
 
 // let novosAnimais = {
 //     ...animaisFofinhos,
 //     apelidos: ['pequeno', 'pelúcia', 'bichinho']
 // }
-// console.log(bichinhos(`Esse é o ursinho: ${novosAnimais.nome}. Também é chamado de: ${novosAnimais.apelidos}.`));
+// console.log(bichinhos(novosAnimais));
  
 
 //2
@@ -75,15 +75,10 @@ sem atribuição de valor.
 
 // function temFruta(fruta) {  
 //     carrinho.push(fruta); 
-//     return fruta
+//     return carrinho
 // }
-// console.log(temFruta(frutas[0]));
-// console.log(temFruta(frutas[1]));
-// console.log(temFruta(frutas[2]));
+// temFruta(frutas[0]);
+// temFruta(frutas[1]);
+// temFruta(frutas[2]);
 
 // console.log(carrinho);
-
-
-
-
-
