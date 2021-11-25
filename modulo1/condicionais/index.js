@@ -79,7 +79,7 @@ if (generoFilme === 'fantasia' && valorIngresso < 15) {
     console.log('Escolha outro filme :(');
 }
 
-//2
+// //2
 let nomeCompleto = prompt('Digite aqui seu nome').toUpperCase();
 let tipoDeJogo = prompt('IN: Para internacional || DO: Para doméstico').toUpperCase();
 let etapaDoJogo = prompt('SF indica semi-final; DT indica decisão de terceiro lugar; e FI indica final').toUpperCase();
@@ -88,56 +88,34 @@ let quantidadeDeIngressos = Number(prompt('Digite a quantidade de ingressos:'));
 let valorIngresso;
 let dolar = 4.1;
 
-let tipoDeJogoDomestico = {
-    semifinais: {
-        categoria1: 1320,
-        categoria2: 880,
-        categoria3: 550,
-        categoria4: 220,
-    },
-    decisaoTerceiroLugar: {
-        categoria1: 660,
-        categoria2: 440,
-        categoria3: 330,
-        categoria4: 170,
-    },
-    final: {
-        categoria1: 1980,
-        categoria2: 1320,
-        categoria3: 880,
-        categoria4: 330,
-    },
-}
-
 if (etapaDoJogo === 'SF') { // Jogos da Semifinal
-     if (categoriaDoJogo === 1) {
-        valorIngresso = tipoDeJogoDomestico.semifinais.categoria1
+     if (categoriaDoJogo === 1 ) {
+        valorIngresso = 1320
     } else if (categoriaDoJogo === 2) {
-        valorIngresso = tipoDeJogoDomestico.semifinais.categoria2
+        valorIngresso = 880
     } else if (categoriaDoJogo === 3) {
-        valorIngresso = tipoDeJogoDomestico.semifinais.categoria3
+        valorIngresso = 550
     } else if (categoriaDoJogo === 4) {
-        valorIngresso = tipoDeJogoDomestico.semifinais.categoria4
+        valorIngresso = 220
     }
 } else if (etapaDoJogo === 'DT') { // Jogos da decisão de terceiro lugar
      if (categoriaDoJogo === 1) {
-        valorIngresso = tipoDeJogoDomestico.decisaoTerceiroLugar.categoria1
+        valorIngresso = 660
     } else if (categoriaDoJogo === 2) {
-        valorIngresso = tipoDeJogoDomestico.decisaoTerceiroLugar.categoria2
+        valorIngresso = 440
     } else if (categoriaDoJogo === 3) {
-        valorIngresso = tipoDeJogoDomestico.decisaoTerceiroLugar.categoria3
+        valorIngresso = 330
     } else if (categoriaDoJogo === 4) {
-        valorIngresso = tipoDeJogoDomestico.decisaoTerceiroLugar.categoria4
-    }
+        valorIngresso = 170
 } else if (etapaDoJogo === 'FI') { // Jogos da Final
      if (categoriaDoJogo === 1) {
-        valorIngresso = tipoDeJogoDomestico.final.categoria1
+        valorIngresso = 1980
     } else if (categoriaDoJogo === 2) {
-        valorIngresso = tipoDeJogoDomestico.final.categoria2
+        valorIngresso = 1320
     } else if (categoriaDoJogo === 3) {
-        valorIngresso = tipoDeJogoDomestico.final.categoria3
+        valorIngresso = 880
     } else if (categoriaDoJogo === 4) {
-        valorIngresso = tipoDeJogoDomestico.final.categoria4
+        valorIngresso = 330
     }
 } else {
     console.log('algo não está certo:(');
@@ -165,4 +143,4 @@ Quantidade de Ingressos: ${quantidadeDeIngressos}
 --- Valores --- 
 Valor do ingresso: US ${(valorIngresso * dolar).toFixed(2)}
 Valor total: U$ ${(valorIngresso * quantidadeDeIngressos * dolar).toFixed(2)}`)
-}
+}}
