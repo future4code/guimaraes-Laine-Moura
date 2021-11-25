@@ -119,7 +119,7 @@ if (etapaDoJogo === 'SF') { // Jogos da Semifinal
     } else if (categoriaDoJogo === 4) {
         valorIngresso = tipoDeJogoDomestico.semifinais.categoria4
     }
-} else if (etapaDoJogo === 'DT') { // Jogos da Semifinal
+} else if (etapaDoJogo === 'DT') { // Jogos da decisão de terceiro lugar
      if (categoriaDoJogo === 1) {
         valorIngresso = tipoDeJogoDomestico.decisaoTerceiroLugar.categoria1
     } else if (categoriaDoJogo === 2) {
@@ -129,7 +129,7 @@ if (etapaDoJogo === 'SF') { // Jogos da Semifinal
     } else if (categoriaDoJogo === 4) {
         valorIngresso = tipoDeJogoDomestico.decisaoTerceiroLugar.categoria4
     }
-} else if (etapaDoJogo === 'FI') { // Jogos da Semifinal
+} else if (etapaDoJogo === 'FI') { // Jogos da Final
      if (categoriaDoJogo === 1) {
         valorIngresso = tipoDeJogoDomestico.final.categoria1
     } else if (categoriaDoJogo === 2) {
