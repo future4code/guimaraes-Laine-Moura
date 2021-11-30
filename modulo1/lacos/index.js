@@ -1,7 +1,7 @@
 //Exercícios de interpretação de código
 /*
 1. Declara a variável valor começando com 0, percorrendo de 0 a 4 e fazendo a soma dos valores cada vez que passa pela condição
-
+*/
 let valor = 0
 for(let i = 0; i < 5; i++) {
   //valor = 0 + 0 // soma 0
@@ -10,9 +10,10 @@ for(let i = 0; i < 5; i++) {
   //valor = 3 + 3 // soma 3
   //valor =  6 + 4 // soma 4 // encerra com o índice 4
   //valor = 10
+  valor+=i
 }
 console.log(valor)
-
+/*
 2// 
 a. Imprime todos os números maiores que 18
 b. Com esse método não é possível acessar o índice
