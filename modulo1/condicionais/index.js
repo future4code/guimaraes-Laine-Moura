@@ -58,9 +58,9 @@ switch (turnoDoAluno) {
 
 //4
 let generoFilme = prompt('Qual o gênero do filme?').toLowerCase();
-let valorIngresso = Number(prompt('Qual o valor do ingresso?'));
+let valorIngressoDoFilme = Number(prompt('Qual o valor do ingresso?'));
 
-if (generoFilme === 'fantasia' && valorIngresso < 15) {
+if (generoFilme === 'fantasia' && valorIngressoDoFilme < 15) {
     console.log('Bom filme!');
 } else {
     console.log('Escolha outro filme :(');
@@ -68,10 +68,10 @@ if (generoFilme === 'fantasia' && valorIngresso < 15) {
 
 ////DESAFIOS
 ////1
-let generoFilme = prompt('Qual o gênero do filme?').toLowerCase();
-let valorIngresso = Number(prompt('Qual o valor do ingresso?'));
+let generoDoFilme = prompt('Qual o gênero do filme?').toLowerCase();
+let valorIngressoFilme = Number(prompt('Qual o valor do ingresso?'));
 
-if (generoFilme === 'fantasia' && valorIngresso < 15) {
+if (generoDoFilme === 'fantasia' && valorIngressoFilme < 15) {
     console.log('Bom filme!')
     let lanchinho = prompt('Qual será o seu lanche?').toLowerCase();
     console.log(`Aproveite o seu/ a sua ${lanchinho}!`);
@@ -89,7 +89,7 @@ let valorIngresso;
 let dolar = 4.1;
 
 if (etapaDoJogo === 'SF') { // Jogos da Semifinal
-     if (categoriaDoJogo === 1 ) {
+    if (categoriaDoJogo === 1) {
         valorIngresso = 1320
     } else if (categoriaDoJogo === 2) {
         valorIngresso = 880
@@ -99,16 +99,17 @@ if (etapaDoJogo === 'SF') { // Jogos da Semifinal
         valorIngresso = 220
     }
 } else if (etapaDoJogo === 'DT') { // Jogos da decisão de terceiro lugar
-     if (categoriaDoJogo === 1) {
+    if (categoriaDoJogo === 1) {
         valorIngresso = 660
     } else if (categoriaDoJogo === 2) {
         valorIngresso = 440
     } else if (categoriaDoJogo === 3) {
         valorIngresso = 330
-    } else if (categoriaDoJogo === 4) {
+    } else {
         valorIngresso = 170
+    }
 } else if (etapaDoJogo === 'FI') { // Jogos da Final
-     if (categoriaDoJogo === 1) {
+    if (categoriaDoJogo === 1) {
         valorIngresso = 1980
     } else if (categoriaDoJogo === 2) {
         valorIngresso = 1320
@@ -121,26 +122,22 @@ if (etapaDoJogo === 'SF') { // Jogos da Semifinal
     console.log('algo não está certo:(');
 }
 
+
+console.log(`
+--- Dados de compra ---
+Nome do cliente: ${nomeCompleto}
+Tipo de jogo: ${tipoDeJogo}
+Etapa do jogo: ${etapaDoJogo}
+Categoria do Jogo: ${categoriaDoJogo}
+Quantidade de Ingressos: ${quantidadeDeIngressos}`)
+
 if (tipoDeJogo === 'DO') {
     console.log(`
---- Dados de compra ---
-Nome do cliente: ${nomeCompleto}
-Tipo de jogo: ${tipoDeJogo}
-Etapa do jogo: ${etapaDoJogo}
-Categoria do Jogo: ${categoriaDoJogo}
-Quantidade de Ingressos: ${quantidadeDeIngressos}
 --- Valores --- 
 Valor do ingresso: R$ ${valorIngresso }
-Valor total: R$ ${valorIngresso * quantidadeDeIngressos} `)
+Valor total: R$ ${valorIngresso * quantidadeDeIngressos}`)
 } else {
-    console.log(`
---- Dados de compra ---
-Nome do cliente: ${nomeCompleto}
-Tipo de jogo: ${tipoDeJogo}
-Etapa do jogo: ${etapaDoJogo}
-Categoria do Jogo: ${categoriaDoJogo}
-Quantidade de Ingressos: ${quantidadeDeIngressos}
---- Valores --- 
-Valor do ingresso: US ${(valorIngresso * dolar).toFixed(2)}
-Valor total: U$ ${(valorIngresso * quantidadeDeIngressos * dolar).toFixed(2)}`)
-}}
+    console.log(`--- Valores --- 
+Valor do ingresso: US ${(valorIngresso / dolar).toFixed(2)}
+Valor total: U$ ${((valorIngresso * quantidadeDeIngressos) / dolar).toFixed(2)}`);
+}
