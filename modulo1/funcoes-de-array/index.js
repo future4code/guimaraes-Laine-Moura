@@ -92,19 +92,14 @@ const produtos = [
 //console.log(nomeProdutos)
 
 
-// b -  incompleto - Cria um novo array que contém um objeto com o nome e o preço de cada item, aplicando 5% de desconto em todos eles 
-const produtosComDEsconto = produtos.map((item) => {
-    const novoItem = {};
-    novoItem.preco = (item.preco * 0.95).toFixed(2);
-    novoItem.nome = item.nome;
-
-    return  {
+// b - Cria um novo array que contém um objeto com o nome e o preço de cada item, aplicando 5% de desconto em todos eles 
+const produtosDesconto = produtos.map((item) => {
+    return {
         nome: item.nome,
-        preco: (item.preco*0.95).toFixed(2)
+        preco: (item.preco * 0.95).toFixed(2)
     }
-})
-
-console.log(produtosComDEsconto);
+  })
+  console.log(produtosDesconto);
 
 
 // c - Crie um novo array que contenha apenas os objetos da categoria Bebidas
