@@ -26,7 +26,7 @@ function retornaNumerosPares(array) {
     let arrayPares = [];
     for (const i of array) {
         if (i % 2 === 0)
-        arrayPares.push(i)
+            arrayPares.push(i)
     }
     return arrayPares
 }
@@ -36,9 +36,9 @@ function retornaNumerosParesElevadosADois(array) {
     let arrayPares = [];
     for (const e of array) {
         if (e % 2 === 0)
-        arrayPares.push(e*e)
+            arrayPares.push(e * e)
 
-    } 
+    }
     return arrayPares
 
 }
@@ -50,6 +50,29 @@ function retornaMaiorNumero(array) {
 
 // EXERCÍCIO 07
 function retornaObjetoEntreDoisNumeros(num1, num2) {
+    let maiorNumero = undefined;
+    let menorNumero = undefined;
+    let maiorDivisivelPorMenor = undefined;
+    let diferenca = undefined;
+    //{"maiorNumero":30,"maiorDivisivelPorMenor":true,"diferenca":15}
+
+    if (num1 > num2) {
+        maiorNumero = num1;
+        menorNumero = num2
+    } else {
+        maiorNumero = num2;
+        menorNumero = num1
+    }
+
+    if (maiorNumero % menorNumero === 0){
+        maiorDivisivelPorMenor = true;
+    } else {
+        maiorDivisivelPorMenor = false;
+    }
+
+    diferenca = maiorNumero - menorNumero
+
+    return {"maiorNumero":maiorNumero,"maiorDivisivelPorMenor":maiorDivisivelPorMenor,"diferenca":diferenca}
 
 }
 
