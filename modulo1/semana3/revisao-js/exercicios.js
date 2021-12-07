@@ -15,13 +15,20 @@ function retornaArrayInvertido(array) {
 
 // EXERCÍCIO 03
 function retornaArrayOrdenado(array) {
-    array.sort(function(a, b){return a-b})
+    array.sort(function (a, b) {
+        return a - b
+    })
     return array
 } // https://www.alura.com.br/artigos/ordenacao-de-numeros-no-javascript-nao-funciona?gclid=Cj0KCQiAqbyNBhC2ARIsALDwAsDfWo1sb2hXP5EYPTw2JIeGSMMitFRrgmf51FP3KXA_rgu3D4czSGAaAjaHEALw_wcB
 
 // EXERCÍCIO 04
 function retornaNumerosPares(array) {
-
+    let arrayPares = [];
+    for (const i of array) {
+        if (i % 2 === 0)
+        arrayPares.push(i)
+    }
+    return arrayPares
 }
 
 // EXERCÍCIO 05
