@@ -33,6 +33,13 @@ function retornaNumerosPares(array) {
 
 // EXERCÍCIO 05
 function retornaNumerosParesElevadosADois(array) {
+    let arrayPares = [];
+    for (const e of array) {
+        if (e % 2 === 0)
+        arrayPares.push(e*e)
+
+    } 
+    return arrayPares
 
 }
 
