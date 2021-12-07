@@ -64,7 +64,7 @@ function retornaObjetoEntreDoisNumeros(num1, num2) {
         menorNumero = num1
     }
 
-    if (maiorNumero % menorNumero === 0){
+    if (maiorNumero % menorNumero === 0) {
         maiorDivisivelPorMenor = true;
     } else {
         maiorDivisivelPorMenor = false;
@@ -72,7 +72,11 @@ function retornaObjetoEntreDoisNumeros(num1, num2) {
 
     diferenca = maiorNumero - menorNumero
 
-    return {"maiorNumero":maiorNumero,"maiorDivisivelPorMenor":maiorDivisivelPorMenor,"diferenca":diferenca}
+    return {
+        "maiorNumero": maiorNumero,
+        "maiorDivisivelPorMenor": maiorDivisivelPorMenor,
+        "diferenca": diferenca
+    }
 
 }
 
@@ -90,7 +94,13 @@ function retornaNPrimeirosPares(n) {
 
 // EXERCÍCIO 09
 function classificaTriangulo(ladoA, ladoB, ladoC) {
-
+    if (ladoA === ladoB && ladoB === ladoC ) {
+        return 'Equilátero'
+    } else if (ladoA === ladoB || ladoB === ladoC || ladoA === ladoC){
+        return 'Isósceles'
+    } else {
+        return 'Escaleno'
+    }
 }
 
 // EXERCÍCIO 10
