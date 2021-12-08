@@ -110,33 +110,41 @@ function retornaSegundoMaiorESegundoMenor(array) {
     })
 
     let menor = array[1];
-    let maior = array[array.length-2];
+    let maior = array[array.length - 2];
     array = [maior, menor]
-    
+
     return array
 }
 
 // EXERCÍCIO 11
 function retornaChamadaDeFilme(filme) {
     //11
-return `Venha assistir ao filme ${filme.nome}, de ${filme.ano}, dirigido por ${filme.diretor} e estrelado por ${filme.atores.join(', ')}.`    
+    return `Venha assistir ao filme ${filme.nome}, de ${filme.ano}, dirigido por ${filme.diretor} e estrelado por ${filme.atores.join(', ')}.`
 }
 
 // EXERCÍCIO 12
 function retornaPessoaAnonimizada(pessoa) {
     //12
-let objeto = {...pessoa}
+    let objeto = {
+        ...pessoa
+    }
 
-return {
-'nome': "ANÔNIMO",
-'idade': objeto.idade,
-'email': objeto.email,
-'endereco': objeto.endereco
-}
+    return {
+        'nome': "ANÔNIMO",
+        'idade': objeto.idade,
+        'email': objeto.email,
+        'endereco': objeto.endereco
+    }
 }
 
 // EXERCÍCIO 13A
 function retornaPessoasAutorizadas(pessoas) {
+
+    let autorizadas = pessoas.filter((pessoa) => {
+        return (pessoa.idade > 14 && pessoa.idade < 60 && pessoa.altura > 1.5)
+    }) 
+
+    return autorizadas
 
 }
 
