@@ -189,14 +189,20 @@ function retornaArrayOrdenadoPorData(consultas) {
     for (let consulta of consultas)
 
         consulta.dataDaConsulta = consulta.dataDaConsulta.split('/').reverse().toString().replaceAll(',', '');
+    // trata os valores da propriedade dataDaConsulta tirando a /, invertendo os itens do array (colocando no formato americano de data), transformando em string e substituindo as ',' por '' (espaço vazio).
 
     consultas.sort(function (a, b) {
         return (a.dataDaConsulta > b.dataDaConsulta) ? 1 : ((b.dataDaConsulta > a.dataDaConsulta) ? -1 : 0);
     })
 
+    //operador ternário para execução da lógica de comparação como função do método .sort
+    // referência:  https://www.alura.com.br/artigos/ordenacao-de-numeros-no-javascript-nao-funciona
+
     for (let indice of consultas)
         indice.dataDaConsulta = indice.dataDaConsulta.replace(/^(\d{4})(\d{2})(\d{2}).*/, '$3/$2/$1');
-    //regex ////https://www.alura.com.br/artigos/javascript-replace-manipulando-strings-e-regex?gclid=CjwKCAiAksyNBhAPEiwAlDBeLChvjmDkn1F5AFwjNBIlLtx72BF9WuAyrDPctrBI75GhFm5S1V7W_RoCgOQQAvD_BwE
+    
+    //referência
+    //https://www.alura.com.br/artigos/javascript-replace-manipulando-strings-e-regex?gclid=CjwKCAiAksyNBhAPEiwAlDBeLChvjmDkn1F5AFwjNBIlLtx72BF9WuAyrDPctrBI75GhFm5S1V7W_RoCgOQQAvD_BwE
 
     return consultas
 }
