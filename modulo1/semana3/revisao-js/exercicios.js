@@ -166,19 +166,19 @@ function retornaContasComSaldoAtualizado(contas) {
         somaCompras = conta.compras.reduce((soma, i) => {
             soma += i
             return soma
-            
+
         });
         conta.saldoTotal -= somaCompras
-        
-    
+
+
         conta.compras = []
-    
+
         return contas
     }
 }
 // EXERCÍCIO 15A
 function retornaArrayOrdenadoAlfabeticamente(consultas) {
-    consultas.sort(function(a,b) {
+    consultas.sort(function (a, b) {
         return (a.nome > b.nome) ? 1 : ((b.nome > a.nome) ? -1 : 0);
     })
     return consultas
@@ -186,5 +186,17 @@ function retornaArrayOrdenadoAlfabeticamente(consultas) {
 
 // EXERCÍCIO 15B
 function retornaArrayOrdenadoPorData(consultas) {
+    for (let consulta of consultas)
 
+        consulta.dataDaConsulta = consulta.dataDaConsulta.split('/').reverse().toString().replaceAll(',', '');
+
+    consultas.sort(function (a, b) {
+        return (a.dataDaConsulta > b.dataDaConsulta) ? 1 : ((b.dataDaConsulta > a.dataDaConsulta) ? -1 : 0);
+    })
+
+    for (var i in consultas)
+        consultas[i].dataDaConsulta = consultas[i].dataDaConsulta.replace(/^(\d{4})(\d{2})(\d{2}).*/, '$3/$2/$1');
+    //regex ////https://www.alura.com.br/artigos/javascript-replace-manipulando-strings-e-regex?gclid=CjwKCAiAksyNBhAPEiwAlDBeLChvjmDkn1F5AFwjNBIlLtx72BF9WuAyrDPctrBI75GhFm5S1V7W_RoCgOQQAvD_BwE
+
+    return consultas
 }
