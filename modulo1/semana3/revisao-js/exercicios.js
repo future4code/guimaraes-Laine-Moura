@@ -194,8 +194,8 @@ function retornaArrayOrdenadoPorData(consultas) {
         return (a.dataDaConsulta > b.dataDaConsulta) ? 1 : ((b.dataDaConsulta > a.dataDaConsulta) ? -1 : 0);
     })
 
-    for (var i in consultas)
-        consultas[i].dataDaConsulta = consultas[i].dataDaConsulta.replace(/^(\d{4})(\d{2})(\d{2}).*/, '$3/$2/$1');
+    for (let indice of consultas)
+        indice.dataDaConsulta = indice.dataDaConsulta.replace(/^(\d{4})(\d{2})(\d{2}).*/, '$3/$2/$1');
     //regex ////https://www.alura.com.br/artigos/javascript-replace-manipulando-strings-e-regex?gclid=CjwKCAiAksyNBhAPEiwAlDBeLChvjmDkn1F5AFwjNBIlLtx72BF9WuAyrDPctrBI75GhFm5S1V7W_RoCgOQQAvD_BwE
 
     return consultas
