@@ -21,6 +21,14 @@ header {
     padding: 2%;
 }
 
+header h1 {
+    font-size: 5vh;
+}
+
+header p {
+    font-size: 3vh;
+}
+
 header h1,
 header p {
     color: white;
