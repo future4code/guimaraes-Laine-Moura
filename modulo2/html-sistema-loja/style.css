@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+}
+header, div, footer {
+    text-align: center;
+ }
+
+ header {
+    background-color: black;
+    padding: 2%;
+}
+
+header h1, p {
+    color: white;
+    justify-content: center;
+}
+
+p {
+    letter-spacing: 0.4vh;
+    padding: 2%;
+
+}
+
+#menu {
+    display: flex;
+    margin: 2%;
+    justify-content: space-around;
+    text-align: justify;
+}
+
+#menu a {
+    font-weight: 900;
+}
+
+footer {
+    bottom: 0;
+    position:absolute;
+    width: 99%;
+}
+
+footer img {
+    height: 50px;
+ }
