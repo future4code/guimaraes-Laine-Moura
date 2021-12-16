@@ -1,16 +1,28 @@
 * {
     margin: 0;
 }
-header, div, footer {
-    text-align: center;
- }
 
- header {
+a:hover {
+    color: grey;
+}
+
+a:visited {
+    color: rgb(rgb(130, 172, 192));
+}
+
+header,
+section,
+footer {
+    text-align: center;
+}
+
+header {
     background-color: black;
     padding: 2%;
 }
 
-header h1, p {
+header h1,
+header p {
     color: white;
     justify-content: center;
 }
@@ -21,23 +33,30 @@ p {
 
 }
 
-#menu {
+nav {
     display: flex;
     margin: 2%;
     justify-content: space-around;
     text-align: justify;
 }
 
-#menu a {
+nav a {
+    color: inherit;
+    font-family: sans-serif;
     font-weight: 900;
+    text-decoration: inherit;
+}
+
+section p {
+    letter-spacing: 0;
 }
 
 footer {
     bottom: 0;
-    position:absolute;
+    position: absolute;
     width: 99%;
 }
 
 footer img {
     height: 50px;
- }
+}
