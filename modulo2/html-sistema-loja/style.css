@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+}
+
+a:hover {
+    color: grey;
+    transform: scale(1.1);
+}
+
+a:visited {
+    color: rgb(rgb(130, 172, 192));
+}
+
+header,
+section,
+footer {
+    text-align: center;
+}
+
+header {
+    background-color: black;
+    padding: 2%;
+}
+
+header h1 {
+    font-size: 5vh;
+}
+
+header p {
+    font-size: 3vh;
+}
+
+header h1,
+header p {
+    color: white;
+    justify-content: center;
+}
+
+p {
+    letter-spacing: 0.4vh;
+    padding: 2%;
+
+}
+
+nav {
+    display: flex;
+    margin: 2%;
+    justify-content: space-around;
+    text-align: justify;
+}
+
+nav a {
+    color: inherit;
+    font-family: sans-serif;
+    font-weight: 900;
+    text-decoration: inherit;
+}
+
+main td {
+    text-align: center;
+}
+
+main td img {
+    border: 1px solid grey;
+    box-shadow: inset 0 0 1em rgb(228, 228, 228), 0 0 1em rgb(202, 202, 202);
+}
+
+
+main div, main ul{
+    margin: 1vh;
+}
+
+
+main h2 {
+    margin: 1%;
+}
+
+main section {
+    font-family: 'Raleway', sans-serif;
+}
+
+main table tr th {
+    padding: 1vh;
+}
+
+#imagens-index {
+    margin: 5%;
+    text-align-last: justify;
+}
+
+.imagem-grade:hover {
+    transform: scale(1.1);
+}
+
+section {
+    background-image: url(./img/imagem-principal.jpg);
+    height: 50vh;
+}
+
+section span {
+    display: block;
+    font-size: 6vh;
+    text-decoration: solid;
+    
+}
+
+section p {
+    color: white; 
+    text-shadow: rgb(83, 82, 82) .01em .01em .1em;
+    font-weight: 900;
+    font-size: 5vh;
+    letter-spacing: .4vh;
+    line-height: 10vh;
+    padding: 15vh;
+    text-transform: uppercase;
+}
+
+section img {
+    width: 99%;
+    height: 100vh;
+    
+}
+
+footer {
+    position: absolute;
+    width: 99%;
+}
+
+footer img {
+    height: 50px;
+}
