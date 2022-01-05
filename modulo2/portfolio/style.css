@@ -4,11 +4,15 @@
     color: white;
 }
 
+a:hover {
+   background-color: black;
+}
+
 body {
     background-color: rgb(77, 77, 77);
 }
 
-header {
+header, h2 {
     text-align: center;
 }
 
@@ -38,14 +42,23 @@ header p {
 
 table {
     font-size: 4vh;
-    padding: 2%;
     text-align: center;
     width: 100%;
+    padding: 2%;
 }
 
-table tr th {
+table tr th, h2 {
     color: hotpink;
     letter-spacing: .3vh;
     font-size: 5vh;
     padding: 1%;
+}
+
+section a {
+    border: 1px solid white;
+    display: inline-flex;
+    height: 40vh;
+    padding: auto auto;
+    margin: 0 auto;
+    width: 32vw;
 }
