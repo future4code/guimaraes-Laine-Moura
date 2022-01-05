@@ -5,33 +5,33 @@
 }
 
 a:hover {
-   background-color: black;
+    background-color: black;
 }
 
 body {
     background-color: rgb(77, 77, 77);
 }
 
-header, h2 {
+header,
+h2 {
     text-align: center;
 }
 
 header h1 {
     background-color: rgb(0, 0, 0);
     font-family: 'Raleway', sans-serif;
-font-family: 'Share Tech', sans-serif;
+    font-family: 'Share Tech', sans-serif;
     font-size: 8vh;
     letter-spacing: .5vh;
-    padding: 1%;
+    padding: 10%;
     text-decoration: solid;
 }
 
 header img {
     border: 3px dotted greenyellow;
     border-radius: 50%;
-    margin: 0 auto;
-    margin: 2%;
-    width: 20%;
+    margin-top: -18vh;
+    width: 15%;
 }
 
 header p {
@@ -49,7 +49,8 @@ table {
     padding: 2%;
 }
 
-table tr th, h2 {
+table tr th,
+h2 {
     color: hotpink;
     letter-spacing: .3vh;
     font-size: 5vh;
