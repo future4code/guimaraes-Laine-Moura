@@ -9,6 +9,15 @@ body {
 }
 
 header h1 {    
-    padding: 1vh;
+    font-size: 8vh;
+    letter-spacing: .5vh;
+    padding: 2vh;
     text-align: center;
+    text-decoration: solid;
+}
+
+header p {
+    font-size: 4vh;
+    text-align: center;
+    padding: 6vh;
 }
