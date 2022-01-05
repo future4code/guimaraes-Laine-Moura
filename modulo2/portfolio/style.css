@@ -18,6 +18,8 @@ header, h2 {
 
 header h1 {
     background-color: rgb(0, 0, 0);
+    font-family: 'Raleway', sans-serif;
+font-family: 'Share Tech', sans-serif;
     font-size: 8vh;
     letter-spacing: .5vh;
     padding: 1%;
