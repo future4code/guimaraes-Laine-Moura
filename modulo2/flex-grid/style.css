@@ -54,7 +54,6 @@ main {
 div {
     width: 95%;
     box-shadow: 10px 5px 5px darkgray;
-    
 }
 
 div p {
@@ -62,5 +61,5 @@ div p {
 }
 
 div img {
-    width: 85%;
+    width: 99%;
 }
