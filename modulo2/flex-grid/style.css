@@ -27,22 +27,26 @@ button {
 
 aside {
     background-color: #f2d0e0;
-    display: flex;
-    flex-direction: column;
     width: 15%;
-    height: 128vh;
+    height: 105vh;
     float: left;
 }
 
 aside a {
     margin: 4vh 2vh 0 1vh;
     color: black;
-
+    display: grid;
+    grid-template-columns: 2fr 7fr 1fr;
 }
 
-aside img {
-    width: 8%;
+.icone-menu {
+    width: 50%;
     padding: 0 2vh 0 0;
+}
+
+.seta-menu {
+    width: 50%;
+    justify-content: end;
 }
 
 /* CONFIGURAÇÃO DO AREA DO CARDS*/
