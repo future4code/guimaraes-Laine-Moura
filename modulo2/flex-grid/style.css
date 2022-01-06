@@ -58,7 +58,7 @@ main {
 div {
     width: 95%;
     box-shadow: 10px 5px 5px darkgray;
-    margin-top: 2vh;
+    margin: 2vh 0 0 2vh;
 }
 
 div p {
