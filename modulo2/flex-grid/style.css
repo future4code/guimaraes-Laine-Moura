@@ -30,6 +30,10 @@ aside {
     float: left;
 }
 
+aside a {
+    margin: 4vh 0 0 1vh;
+}
+
 /* CONFIGURAÇÃO DO AREA DO CARDS*/
 
 main {
