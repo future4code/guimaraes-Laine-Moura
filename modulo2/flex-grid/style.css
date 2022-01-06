@@ -57,7 +57,8 @@ div {
 }
 
 div p {
-    width: 75%;
+    width: 80%;
+    text-align: left;
 }
 
 div img {
