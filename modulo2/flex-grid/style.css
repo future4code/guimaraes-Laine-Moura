@@ -3,6 +3,8 @@
     padding: 0;
 }
 
+/*CONFIGURAÇÃO DO HEADER*/
+
 img {
     width: 2%;
 }
@@ -17,6 +19,8 @@ button {
     margin: 2vh;
 }
 
+/*CONFIGURAÇÃO DO MENU LATERAL*/
+
 aside {
     background-color: #f2d0e0;
     display: flex;
@@ -26,11 +30,27 @@ aside {
     float: left;
 }
 
+/* CONFIGURAÇÃO DO AREA DO CARDS*/
+
 main {
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr;
 
+}
+
+/* CONFIGURAÇÃO DOS CARDS*/
+
+.item-titulo {
+    font-weight: 900;
+}
+
+.item-descricao {
+    margin: 2vh 0;
+}
+
+div p {
+    width: 75%;
 }
 
 div img {
