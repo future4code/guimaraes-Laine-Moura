@@ -21,4 +21,18 @@ aside {
     background-color: #f2d0e0;
     display: flex;
     flex-direction: column;
+    width: 15%;
+    height: 92.5vh;
+    float: left;
+}
+
+main {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+}
+
+div img {
+    width: 55%;
 }
