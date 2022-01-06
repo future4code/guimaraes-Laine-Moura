@@ -1,3 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    width: 2%;
+}
+
+header {
+    display: grid;
+    grid-template-columns:  25fr 1fr;
+    background-color: mediumvioletred;
+}
+
+button {
+    margin: 2vh;
+}
+
 aside {
     background-color: #f2d0e0;
     display: flex;
