@@ -1,0 +1,5 @@
+aside {
+    background-color: #f2d0e0;
+    display: flex;
+    flex-direction: column;
+}
