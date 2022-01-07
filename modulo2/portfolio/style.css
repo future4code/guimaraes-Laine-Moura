@@ -4,9 +4,15 @@
     color: white;
 }
 
-a:hover {
-    background-color: black;
+a {
+    text-transform: inherit;
 }
+
+a:hover {
+    background-color: rgb(75, 75, 75);
+    transform: scale(0.98,0.98);
+}
+
 
 body {
     background-color: rgb(77, 77, 77);
@@ -15,6 +21,10 @@ body {
 header,
 h2 {
     text-align: center;
+}
+
+h2 {
+    margin: 4% 0;
 }
 
 header h1 {
@@ -37,7 +47,7 @@ header img {
 header p {
     font-size: 4vh;
     line-height: 6vh;
-    margin: 0 auto 1%;
+    margin: 5% auto 5%;
     padding: 1%;
     width: 40%;
 }
@@ -47,6 +57,7 @@ table {
     text-align: center;
     width: 100%;
     padding: 2%;
+    margin: 10% 0;
 }
 
 table tr th,
@@ -57,11 +68,39 @@ h2 {
     padding: 1%;
 }
 
-section a {
-    border: 1px solid white;
+.projetos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    
+}
+
+.projetos img {
+    border-radius: 5%;
+    width: 18vw;
+}
+
+.projetos a {
     display: inline-flex;
+    justify-content: space-around;
     height: 40vh;
-    padding: auto auto;
-    margin: 0 auto;
-    width: 32vw;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu;
+    font-size: 3vh;
+}
+
+
+.contato form{
+    display: grid;
+
+    justify-content: center;
+}
+
+.contato label {
+    margin: 1%;
+    font-size: 2vh;
+}
+
+.contato input , .contato button {
+    color: black;
+    font-size: 2vh;
+    margin-top: 1vh;
 }
