@@ -1,3 +1,4 @@
+/* CONFIGURACOES GLOBAIS*/
 * {
     margin: 0;
     padding: 0;
@@ -8,26 +9,31 @@ html {
     scroll-behavior: smooth;
 }
 
+body {
+    background-color: rgb(248, 243, 233);
+}
+
 a {
     text-transform: inherit;
 }
 
 a:hover {
-    background-color: rgb(75, 75, 75);
     transform: scale(0.98,0.98);
 }
 
-body {
-    background-color: rgb(77, 77, 77);
-}
-
-header,
-h2 {
-    text-align: center;
+p {
+    color: black;
+    font-family: 'Share Tech', sans-serif;
 }
 
 h2 {
     margin: 4% 0;
+}
+
+
+/* CONFIGURACAO DE HEADER E NAV*/
+header, h2 {
+    text-align: center;
 }
 
 nav {
@@ -74,6 +80,8 @@ header p {
     width: 40%;
 }
 
+/*CONFIGURAÇÃO DA TABELA - HISTORICO PROFISSIONAL*/
+
 table {
     font-size: 4vh;
     text-align: center;
@@ -87,32 +95,45 @@ table tr th,
 h2 {
     color: hotpink;
     letter-spacing: .3vh;
-    font-size: 5vh;
+    font-size: 6vh;
 }
+
+th {
+    padding: 5% 0;
+}
+
+/*PADDING DAS SECOES DE PROJETOS E CONTATO*/
 
 #projetos, #contato {
     padding: 5% 0;
 }
 
-#projetos div{
+/*SEÇÃO DE PROJETOS*/
+
+#container-cards {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    
+    text-align: center;
 }
 
-
-#projetos img {
+#container-cards img {
     border-radius: 5%;
     width: 18vw;
 }
 
-#projetos a {
+#container-cards a {
     display: inline-flex;
-    justify-content: space-around;
     height: 40vh;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu;
     font-size: 3vh;
 }
+
+#container-cards p {
+    font-size: 3vh;
+    margin: 1% 0;
+}
+
+/*SEÇÃO DE CONTATOS*/
 
 #contato {
     background-color: black;
@@ -140,8 +161,10 @@ h2 {
 }
 
 #contato button:hover {
-    transform: scale(1.02);
+    transform: scale(1.04);
 }
+
+/* FOOTER */
 
 footer {
     text-align: center;
