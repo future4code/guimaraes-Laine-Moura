@@ -109,6 +109,10 @@ th {
 
 /*SEÇÃO DE PROJETOS*/
 
+#projetos {
+    padding: 10%;
+}
+
 #container-cards {
     display: grid;
     grid-template-columns: 1fr 1fr;
