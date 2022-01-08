@@ -4,6 +4,10 @@
     color: white;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 a {
     text-transform: inherit;
 }
@@ -24,6 +28,25 @@ h2 {
 
 h2 {
     margin: 4% 0;
+}
+
+nav {
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+nav a {
+    text-decoration: inherit;
+    font-size: 2vh;
+    padding: 0 1%;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    font-weight: 600;
+    background-color: black;
 }
 
 header h1 {
@@ -56,7 +79,7 @@ table {
     text-align: center;
     width: 100%;
     padding: 2%;
-    padding: 10% 0;
+    padding: 20% 0;
     background-color: black;
 }
 
@@ -67,18 +90,23 @@ h2 {
     font-size: 5vh;
 }
 
-.projetos {
+#projetos, #contato {
+    padding: 5% 0;
+}
+
+#projetos div{
     display: grid;
     grid-template-columns: 1fr 1fr;
     
 }
 
-.projetos img {
+
+#projetos img {
     border-radius: 5%;
     width: 18vw;
 }
 
-.projetos a {
+#projetos a {
     display: inline-flex;
     justify-content: space-around;
     height: 40vh;
@@ -86,31 +114,31 @@ h2 {
     font-size: 3vh;
 }
 
-.contato {
+#contato {
     background-color: black;
 }
-.contato form{
+#contato form{
     display: grid;
     justify-content: center;
     margin-top: -3%;
 }
 
-.contato label {
+#contato label {
     margin: 1%;
     font-size: 2vh;
 }
 
-.contato input , .contato button {
+#contato input , #contato button {
     color: black;
     font-size: 2vh;
     margin: 1vh 0;
 }
 
-.contato button {
+#contato button {
     width: 5vw;
     margin: 0 auto;
 }
 
-.contato button:hover {
+#contato button:hover {
     transform: scale(1.02);
 }
