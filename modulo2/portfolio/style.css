@@ -142,3 +142,16 @@ h2 {
 #contato button:hover {
     transform: scale(1.02);
 }
+
+footer {
+    text-align: center;
+}
+
+footer img {
+    width: 70px;
+    padding: 1% 1%;
+}
+
+footer img:hover {
+    transform: scale(1.1);
+}
