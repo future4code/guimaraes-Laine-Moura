@@ -21,7 +21,7 @@ a:hover {
     transform: scale(0.98,0.98);
 }
 
-p {
+p, li {
     color: black;
     font-family: 'Share Tech', sans-serif;
 }
@@ -32,7 +32,7 @@ h2 {
 
 
 /* CONFIGURACAO DE HEADER E NAV*/
-header, h2 {
+header, h2, ul {
     text-align: center;
 }
 
@@ -53,6 +53,22 @@ nav a:hover {
     text-decoration: underline;
     font-weight: 600;
     background-color: black;
+}
+
+#header-blackjack a {
+    color: black;
+    text-decoration: inherit;
+    font-size: 4vh;
+    margin: 2% 0;
+    width: 100px;
+}
+
+#header-blackjack a:hover {
+    text-decoration: underline;
+}
+
+#header-blackjack li {
+    font-size: 3vh;
 }
 
 header h1 {
