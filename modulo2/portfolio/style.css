@@ -22,7 +22,6 @@ a:hover {
 }
 
 p, li {
-    color: black;
     font-family: 'Share Tech', sans-serif;
 }
 
@@ -78,6 +77,7 @@ header p {
     margin: 5% auto 5%;
     padding: 1%;
     width: 40%;
+    color: black;
 }
 
 /*CONFIGURAÇÃO DA TABELA - HISTORICO PROFISSIONAL*/
@@ -98,7 +98,11 @@ h2 {
 }
 
 th {
-    padding: 5% 0;
+    padding: 3% 0;
+}
+
+.th-subtitulo {
+    font-size: 4vh;
 }
 
 /*PADDING DAS SECOES DE PROJETOS E CONTATO*/
@@ -138,7 +142,7 @@ th {
 
 /*SEÇÃO DE CONTATOS*/
 
-#contato {
+#contato, #projetos {
     background-color: black;
 }
 #contato form{
@@ -199,6 +203,7 @@ footer img:hover {
 
 #main-blackjack li, #main-labelindas li {
     font-size: 3vh;
+    color: black;
 }
 
 #main-blackjack img, #main-labelindas img {
