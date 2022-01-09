@@ -55,22 +55,6 @@ nav a:hover {
     background-color: black;
 }
 
-#header-blackjack a {
-    color: black;
-    text-decoration: inherit;
-    font-size: 4vh;
-    margin: 2% 0;
-    width: 100px;
-}
-
-#header-blackjack a:hover {
-    text-decoration: underline;
-}
-
-#header-blackjack li {
-    font-size: 3vh;
-}
-
 header h1 {
     background-color: rgb(0, 0, 0);
     font-family: 'Raleway', sans-serif;
@@ -196,4 +180,38 @@ footer img {
 
 footer img:hover {
     transform: scale(1.1);
+}
+
+/* CONFIGURAÇÃO DO PROJETO BLACKJACK.HTML*/
+
+#header-blackjack a, #header-labelindas a{
+    color: black;
+    text-decoration: inherit;
+    font-size: 4vh;
+    margin: 2% 0;
+    width: 100px;
+}
+
+#header-blackjack a:hover , #header-labelindas a:hover{
+    text-decoration: underline;
+}
+
+#header-blackjack li, #header-labelindas li {
+    font-size: 3vh;
+}
+
+#header-blackjack img, #header-labelindas img {
+    width: 30vw;
+    height: 20vw;
+    margin: inherit;
+    border: inherit;
+    border-radius: inherit;
+}
+
+#div-labelidas{
+    display: grid;
+   grid-template-columns: 1fr 1fr;
+   margin: 0 auto;
+   row-gap: 3vh;
+   margin-top: 5vh;
 }
