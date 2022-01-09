@@ -184,7 +184,7 @@ footer img:hover {
 
 /* CONFIGURAÇÃO DO PROJETO BLACKJACK.HTML*/
 
-#main-blackjack a, #header-labelindas a{
+#main-blackjack a, #main-labelindas a{
     color: black;
     text-decoration: inherit;
     font-size: 4vh;
@@ -193,15 +193,15 @@ footer img:hover {
     margin: 0 auto;
 }
 
-#main-blackjack a:hover , #header-labelindas a:hover{
+#main-blackjack a:hover , #main-labelindas a:hover{
     text-decoration: underline;
 }
 
-#main-blackjack li, #header-labelindas li {
+#main-blackjack li, #main-labelindas li {
     font-size: 3vh;
 }
 
-#main-blackjack img, #header-labelindas img {
+#main-blackjack img, #main-labelindas img {
     width: 30vw;
     height: 20vw;
     margin: inherit;
