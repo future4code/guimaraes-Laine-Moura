@@ -200,10 +200,10 @@ footer img:hover {
 #main-blackjack a, #main-labelindas a{
     color: black;
     text-decoration: inherit;
-    font-size: 4vh;
-    width: 10px;
-    display: flex;
+    font-size: 3vh;
+    display: table;
     margin: 0 auto;
+    margin-top: 2vh;
 }
 
 #main-blackjack a:hover , #main-labelindas a:hover{
