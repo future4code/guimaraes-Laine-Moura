@@ -45,7 +45,7 @@ nav {
 nav a {
     text-decoration: inherit;
     font-size: 2vh;
-    padding: 0 1%;
+    padding: 1% 1%;
 }
 
 nav a:hover {
@@ -86,7 +86,7 @@ table {
     font-size: 4vh;
     text-align: center;
     width: 100%;
-    padding: 8%;
+    padding: 12%;
     background-color: black;
 }
 
@@ -98,23 +98,31 @@ h2 {
 }
 
 th {
-    padding: 3% 0;
+    padding: 1% 0;
 }
 
 .th-subtitulo {
     font-size: 4vh;
 }
 
-/*PADDING DAS SECOES DE PROJETOS E CONTATO*/
+/* SECOES DE PROJETOS E CONTATO*/
 
 #projetos, #contato {
-    padding: 5% 0;
+    padding: 10% 0;
+}
+
+#contato, #projetos {
+    background-color: black;
 }
 
 /*SEÇÃO DE PROJETOS*/
 
 #projetos {
     padding: 10%;
+}
+
+#projetos h2 {
+    margin-top: -2%;
 }
 
 #container-cards {
@@ -142,9 +150,10 @@ th {
 
 /*SEÇÃO DE CONTATOS*/
 
-#contato, #projetos {
-    background-color: black;
+#contato {
+    padding-top: 20% 0;
 }
+
 #contato form{
     display: grid;
     justify-content: center;
