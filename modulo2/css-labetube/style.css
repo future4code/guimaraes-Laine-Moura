@@ -41,9 +41,40 @@ span {
 main {
     margin: 1% 1%;
     display: grid;
+
+}
+
+#grid-videos {
+    margin: 2% 2%;
+    display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+video {
+    width: 86%;
+}
+.video a {
+    text-decoration: inherit;
+    color: inherit;
+}
+
+.video img{
+    width: 20vw;
+}
+
+.video p {
+    margin-bottom: 10%;
+}
+
+iframe {
+    margin: 0 auto;
+    width: 50vw;
+    height: 30vw;
+}
+
+h2 {
+    margin: 2% 2%;
 }
 
 footer {
