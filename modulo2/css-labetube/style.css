@@ -2,3 +2,40 @@
     margin: 0;
     padding: 0;
 }
+
+header {
+    background-color: red;
+    height: 60px;
+    display: flex;
+    color: rgb(26, 26, 26);
+    align-items: center;   
+}
+
+#icone-principal {
+    width: 3%;
+    margin: 1% 1%;
+}
+
+header h1 {
+    padding: 0 2%;
+}
+
+#busca {
+    display: flex;
+    align-items: center;
+}
+
+#busca input {
+    display: inline-flex;
+    width: 80%;
+    height: 30px;
+    margin: 0 2%;
+}
+
+#busca img {
+    width: 3%;
+}
+
+span {
+    color: white;
+}
