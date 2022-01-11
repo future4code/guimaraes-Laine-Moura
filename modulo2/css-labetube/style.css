@@ -39,3 +39,15 @@ header h1 {
 span {
     color: white;
 }
+
+footer {
+    background-color: red;
+    font-weight: 700;
+    font-size: 2vh;
+    letter-spacing: .2vh;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+
+}
