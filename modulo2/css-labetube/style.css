@@ -16,10 +16,6 @@ header {
     margin: 1% 1%;
 }
 
-header h1 {
-    padding: 0 2%;
-}
-
 #busca {
     display: flex;
     align-items: center;
