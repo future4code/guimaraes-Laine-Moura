@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: red;
+    height: 60px;
+    display: flex;
+    color: rgb(26, 26, 26);
+    align-items: center;   
+}
+
+#icone-principal {
+    width: 3%;
+    margin: 1% 1%;
+}
+
+#busca {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 23%;
+}
+
+#busca input {
+    display: inline-flex;
+    width: 80%;
+    height: 30px;
+    margin: 0 2%;
+}
+
+#busca img {
+    width: 3%;
+}
+
+span {
+    color: white;
+}
+
+main {
+    margin: 1% 1%;
+    display: grid;
+
+}
+
+#grid-videos {
+    margin: 2% 2%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+video {
+    width: 86%;
+}
+.video a {
+    text-decoration: inherit;
+    color: inherit;
+}
+
+.video img{
+    width: 20vw;
+}
+
+.video p {
+    margin-bottom: 10%;
+}
+
+iframe {
+    margin: 0 auto;
+    width: 50vw;
+    height: 30vw;
+}
+
+h2 {
+    margin: 2% 2%;
+}
+
+footer {
+    background-color: red;
+    font-weight: 700;
+    font-size: 2vh;
+    letter-spacing: .2vh;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+
+}
