@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import CardGrande from './components/CardGrande/CardGrande';
 import ImagemButton from './components/ImagemButton/ImagemButton';
+import CardPequeno from './components/CardPequeno/CardPequeno';
 
 function App() {
   return (
@@ -9,14 +10,29 @@ function App() {
       <div className="page-section-container">
         <h2>Dados pessoais</h2>
         <CardGrande 
-          imagem="https://uploads-ssl.webflow.com/5d640f4558306be99cf47a0e/5dd57846babb597b77c6bb1d_PerfilFuture4_cor.png" 
-          nome="Astrodev" 
-          descricao="Oi, eu sou o Astrodev. Sou o chefe dos alunos da Labenu. Adoro pedir e-mails na sexta-feira e esperar os alunos responderem só para responder com uma bronca e dar mais trabalho para eles."
+          imagem="https://pbs.twimg.com/profile_images/1477701827848286240/XnNeDd66_400x400.jpg" 
+          nome="Laíne" 
+          descricao="Olá, sou a Laíne Moura. Formada em Geografia pela UERJ, em transição de carreira para a área de desenvolvimento WEB e aluna da Labenu."
         />
         
         <ImagemButton 
           imagem="https://image.flaticon.com/icons/png/512/117/117472.png" 
           texto="Ver mais"
+        />
+      </div>
+
+      <div className='small-card-container'>
+        <CardPequeno
+        imagem="https://cdn-icons.flaticon.com/png/512/2549/premium/2549872.png?token=exp=1643320053~hmac=1db3c4f401e2210ea58f6be12449e1d6"
+        nome="email:"
+        descricao="lalazinha@lalatube.com"
+        />
+      </div>
+      <div className='small-card-container'>
+        <CardPequeno
+        imagem="https://cdn-icons.flaticon.com/png/512/2838/premium/2838912.png?token=exp=1643321008~hmac=a40d33052d4c5670494886f6a7facfe1"
+        nome="endereço:"
+        descricao="Rua dos Pinheiros"
         />
       </div>
 
@@ -29,7 +45,7 @@ function App() {
         />
         
         <CardGrande 
-          imagem="https://imagens.canaltech.com.br/empresas/4418.400.jpg" 
+          imagem="http://t0.gstatic.com/images?q=tbn:ANd9GcQ9u48pu-6IB2FnnYl_H-15le_g8Dkt5d5RN-VWiWIl_-dyJdaa" 
           nome="NASA" 
           descricao="Apontando defeitos." 
         />
