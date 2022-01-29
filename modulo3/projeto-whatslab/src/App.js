@@ -4,7 +4,8 @@ function App() {
   return (
     <div className='body'>
       <form className='form-class'>
-        <input type='text' className='msg' placeholder='Digite aqui sua mensagem'></input>
+        <input type='text' className='user' placeholder='Usuário'/>
+        <input type='text' className='msg' placeholder='Digite aqui sua mensagem'/>
       </form>
 
     </div>
