@@ -8,6 +8,7 @@ margin: 0;
 padding: 0;
 background-color: #282c34;
 overflow: auto
+
 `
 
 const Main = styled.main`
@@ -16,6 +17,8 @@ padding: 0;
 background-color: #282c34;
 min-height: 100vh;
 color: white;
+
+
 `
 
 const Footer = styled.footer`
@@ -23,10 +26,21 @@ const Footer = styled.footer`
   grid-template-columns: 3fr 6fr 1fr;
   position: fixed;
   bottom: 0;
+
+  @media screen and (max-width: 375px) {
+   height: 30px;
+  }
+
 `
 
 const Input = styled.input`
   font-family: Arial;
+  width: 30vw
+`
+const InputMsg = styled.input`
+  font-family: Arial;
+  width: 51vw;
+
 `
 
 const Button = styled.button`
@@ -83,9 +97,9 @@ render() {
           <Input
           value={this.state.valorUser}
           onChange={this.onChangeUser}
-          placeholder={'Digite seu nome de usuário'}
+          placeholder={'Digite seu nome'}
           />
-          <Input
+          <InputMsg
           value={this.state.valorMsg}
           onChange={this.onChangeMsg}
           placeholder={'Digite sua mensagem aqui'}
