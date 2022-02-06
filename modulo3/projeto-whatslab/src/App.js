@@ -7,6 +7,7 @@ const Body = styled.body`
 margin: 0;
 padding: 0;
 background-color: #282c34;
+overflow: auto
 `
 
 const Main = styled.main`
@@ -52,6 +53,9 @@ class App extends React.Component {
     };
     const enviarMensagens = [...this.state.enviarInputs, novaMensagem];
     this.setState({enviarInputs: enviarMensagens})
+
+    this.setState({valorUser: ''})
+    this.setState({valorMsg: ''})
   
   };
 
@@ -66,7 +70,9 @@ class App extends React.Component {
 
 render() {
   const envioMensagemMap  = this.state.enviarInputs.map((enviando) => {
-    return <Chat><p>{enviando.nome} : {enviando.mensagem}</p></Chat>
+    return <Chat><p>{enviando.nome}:</p><p>{enviando.mensagem}</p></Chat>
+
+
   });
   return (
     <Body>
