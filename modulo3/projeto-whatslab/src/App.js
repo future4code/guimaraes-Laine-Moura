@@ -7,7 +7,8 @@ const Body = styled.body`
 margin: 0;
 padding: 0;
 background-color: #282c34;
-overflow: auto
+overflow: auto;
+height: 100vh;
 
 `
 
@@ -15,7 +16,7 @@ const Main = styled.main`
 margin: 0;
 padding: 0;
 background-color: #282c34;
-min-height: 100vh;
+min-height: 90vh;
 color: white;
 
 
@@ -26,9 +27,11 @@ const Footer = styled.footer`
   grid-template-columns: 3fr 6fr 1fr;
   position: fixed;
   bottom: 0;
+  width: 95vw;
 
   @media screen and (max-width: 375px) {
    height: 30px;
+   position: relative;
   }
 
 `
@@ -39,17 +42,24 @@ const Input = styled.input`
 `
 const InputMsg = styled.input`
   font-family: Arial;
-  width: 51vw;
+  width: 50vw;
 
 `
 
 const Button = styled.button`
   color: #282c34;
+  width: 15w
 `
 
 const Chat = styled.div`
-color:white;
-background-color: #282c34;
+color: white;
+background: #66CDAA;
+width: 70vw;
+border-radius: 2%;
+margin-left: 1vw;
+padding-left: 1vw;
+line-height: 3vh;
+
 `
 
 class App extends React.Component {
