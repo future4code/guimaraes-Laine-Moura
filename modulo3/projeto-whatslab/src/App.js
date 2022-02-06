@@ -56,7 +56,7 @@ color: white;
 background: #66CDAA;
 width: 70vw;
 border-radius: 2%;
-margin-left: 1vw;
+margin: 0 0 3vw 1vw;
 padding-left: 1vw;
 line-height: 3vh;
 
