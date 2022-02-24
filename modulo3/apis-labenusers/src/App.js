@@ -1,31 +1,39 @@
 import React from "react";
 import Home from "./Pages/Home";
 import ListaUsuarios from './Pages/ListaUsuarios'
+import axios from 'axios'
+
+
 
 export default class App extends React.Component {
   state = {
-    login: false
+    listando: false
   };
 
   listandoUsuarios = () => {
-    this.setState({ login: true });
+    this.setState({ listando: true });
   };
-
+  
   naHome = () => {
-    this.setState({ login: false });
+    this.setState({ listando: false });
   };
 
-  render() {
+
+  render(
+    
+  ) {
     let pagina = <h1>Página Erro</h1>;
 
-    if (this.state.login) {
+    if (this.state.listando) {
       pagina = <ListaUsuarios onClickHome={this.naHome}/>;
     } else {
       pagina = <Home onClickListando={this.listandoUsuarios} />;
     }
     return (
-      <div className="App">
+      <div>
         {pagina}
+
+        
       </div>
     );
   }
