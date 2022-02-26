@@ -2,6 +2,16 @@ import React from "react";
 import axios from 'axios'
 import styled from 'styled-components'
 
+/* variaveis globais*/
+
+const headers = {
+  headers: {
+      Authorization: 'laine-moura-guimaraes'
+  }
+}
+
+/* styled components */
+
 const Usuario = styled.div`
   display: flex;
 `
@@ -20,6 +30,7 @@ const BotaoExcluir = styled.button`
     
   }
 `
+/* fim do styled components */
 
 
 export default class ListaUsuarios extends React.Component {
@@ -40,11 +51,7 @@ export default class ListaUsuarios extends React.Component {
     axios
       .get(
         'https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users',
-        {
-          headers: {
-            Authorization: 'laine-moura-guimaraes'
-          }
-        }
+        headers
       )
       .then((res) => {
         this.setState({ usuarios: res.data })
@@ -58,11 +65,7 @@ export default class ListaUsuarios extends React.Component {
   deletaUsuario = (idUsuario) => {
     axios
       .delete(`https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/${idUsuario}`,
-        {
-          headers: {
-            Authorization: 'laine-moura-guimaraes'
-          }
-        }
+      headers
       )
       .then((res) => console.log(res))
       .catch((err) => console.log(err.response))
