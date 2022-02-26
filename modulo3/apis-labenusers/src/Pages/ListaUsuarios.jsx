@@ -13,9 +13,10 @@ const BotaoExcluir = styled.button`
   color: #525252;
 
   &:hover {
-    transform: scale(1.2);
+    transform: scale(1.3);
     color: #757575;
     font-weight: 900;
+    cursor: pointer
     
   }
 `
