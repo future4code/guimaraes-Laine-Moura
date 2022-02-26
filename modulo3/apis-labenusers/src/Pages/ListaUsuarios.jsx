@@ -31,6 +31,11 @@ export default class ListaUsuarios extends React.Component {
     this.pegaUsuario()
   }
 
+  componentDidUpdate() {
+    this.pegaUsuario()
+
+  }
+
   pegaUsuario = () => {
     axios
       .get(
