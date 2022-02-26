@@ -1,15 +1,16 @@
 import React from "react"
-import Home from "./Components/Home"
+import Playlists from "./Components/Playlists"
+import styled from "styled-components";
 export default class App extends React.Component {
   state={
-    home: true
+    playlists: true
   }
 
   render() {
     let pagina = <h1>Página Erro</h1>;
 
-      if (this.state.home) {
-        pagina = <Home />;
+      if (this.state.playlists) {
+        pagina = <Playlists />;
       } 
     return (
       <div>
