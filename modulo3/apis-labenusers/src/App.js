@@ -10,25 +10,22 @@ export default class App extends React.Component {
     listando: false
   };
 
-  listandoUsuarios = () => {
-    this.setState({ listando: true });
-  };
+    naLista = () => {
+      this.setState({ listando: true });
+    };
   
-  naHome = () => {
-    this.setState({ listando: false });
-  };
-
-
-  render(
-    
-  ) {
-    let pagina = <h1>Página Erro</h1>;
-
-    if (this.state.listando) {
-      pagina = <ListaUsuarios onClickHome={this.naHome}/>;
-    } else {
-      pagina = <Home onClickListando={this.listandoUsuarios} />;
-    }
+    naHome = () => {
+      this.setState({ listando: false });
+    };
+  
+    render() {
+      let pagina = <h1>Página Erro</h1>;
+  
+      if (this.state.listando) {
+        pagina = <ListaUsuarios onClickHome={this.naHome} />;
+      } else {
+        pagina = <Home onClickListando={this.naLista} />;
+      }
     return (
       <div>
         {pagina}

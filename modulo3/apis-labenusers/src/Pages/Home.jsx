@@ -32,7 +32,9 @@ export default class Home extends React.Component {
         axios
             .post(urlCriaUsuario, body, headers)
             .then((res) => {
-                alert('usuario adicionado');
+            alert('usuario adicionado com sucesso');
+            this.setState({nomeInput: '', emailInput: ''})
+
             })
             .catch((err) => {
                 console.log('errrou');
@@ -44,7 +46,7 @@ export default class Home extends React.Component {
     render() {
         return (
             <div>
-                <button onClick={this.onClickListando}>Trocar tela</button>
+                <button onClick={this.props.onClickListando}>Trocar tela</button>
                 <br />
                 <br />
                 <input type="text" placeholder="Nome" value={this.state.nomeInput} onChange={this.pegaNomeInput} />
