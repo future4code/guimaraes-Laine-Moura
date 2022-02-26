@@ -37,7 +37,7 @@ export default class Home extends React.Component {
 
             })
             .catch((err) => {
-                console.log('errrou');
+                alert('Parece que esse email já foi cadastrado!')
             });
     };
 
@@ -49,7 +49,7 @@ export default class Home extends React.Component {
                 <button onClick={this.props.onClickListando}>Trocar tela</button>
                 <br />
                 <br />
-                <input type="text" placeholder="Nome" value={this.state.nomeInput} onChange={this.pegaNomeInput} />
+                <input type="text" placeholder="Nome Completo" value={this.state.nomeInput} onChange={this.pegaNomeInput} />
                 <input type="email" placeholder="email" value={this.state.emailInput} onChange={this.pegaEmailInput} />
                 <button onClick={this.criaUsuario}>Criar Usuário</button>
             </div>
