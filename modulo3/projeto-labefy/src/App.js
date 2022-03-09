@@ -1,6 +1,7 @@
 import React from "react"
 import Playlists from "./Components/Playlists"
 import Login from "./Components/Login";
+import Playlist from "./Components/Playlist";
 import styled from "styled-components";
 
 const Body = styled.body`
@@ -12,28 +13,37 @@ const Body = styled.body`
 `
 
 export default class App extends React.Component {
-  state={
-    playlists: false
+  state = {
+    tela: "login"
   }
 
-  login = () => this.setState({playlists: true})
+  escolheTela = () => {
+    switch(this.state.tela){
+       case "login":
+         return <Login irParaPlaylists={this.irParaPlaylists}/>
+       case "playlists":
+         return <Playlists irParaPlaylist={this.irParaPlaylist}/>
+       case "playlist":
+         return <Playlist irParaPlaylists={this.irParaPlaylist}/>
+        default:
+          return <p>Opa, algo deu errado</p>
+    }
+  }
 
-  render() {
-    let pagina = <h1>Página Erro</h1>;
+  irParaPlaylists = () => {
+    this.setState({tela: "playlists"})
+  }
 
-      if (this.state.playlists) {
-        pagina = <Playlists />;
-      } else {
-        pagina = <Login onClickLogin={this.login}/>
+  irParaPlaylist = () => {
+    this.setState({tela: "playlist"})
+  }
 
-      }
-    return (
-      <Body>
-        <div>
-          {pagina}
-        </div>
-      </Body>
-    )
+
+  render(){
+  return (
+    <Body>
+      {this.escolheTela()}
+    </Body>
+  );
   }
 }
-

@@ -1,11 +1,11 @@
 import React from "react";
 import axios from "axios";
 import styled from "styled-components";
-import soma from '../assets/soma.png'
-import Playlist from "./Playlist";
+import Playlist from "./Playlist"
 
 const urlCriaPlaylist = 'https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists'
-export const urlTodasPlaylists = 'https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists'
+
+const urlTodasPlaylists = 'https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists'
 
 export const headers = {
     headers: {
@@ -47,21 +47,22 @@ const ImgAddPlaylist = styled.img`
 export default class Playlists extends React.Component {
     state = {
         nome: '',
-        playlists: [], 
-        playlistPag: ''
+        playlists: [],
+        detalhe: false,
+        playlistSelecionada: '',
     }
 
-    irParaPlaylist = () => {
-        this.setState({page:'playlist'})
+    renderizaDetalhe = (mostraPlaylist) => {
+        this.setState({detalhe: true, playlistSelecionada:  mostraPlaylist})
     }
 
-    componentDidMount () {
+    componentDidMount() {
         this.pegaPlaylist()
     }
 
-    componentDidUpdate () {
-       this.pegaPlaylist()
-    } 
+    componentDidUpdate() {
+        this.pegaPlaylist()
+    }
 
     criaPlaylist = () => {
         const body = {
@@ -78,18 +79,14 @@ export default class Playlists extends React.Component {
 
     pegaNomePlaylist = (e) => {
         this.setState({ nome: e.target.value })
-        console.log(this.state.nome);
 
     }
-
-
 
     pegaPlaylist = () => {
         axios
             .get(urlTodasPlaylists, headers)
             .then((res) => {
                 this.setState({ playlists: res.data.result.list })
-                console.log(res.data)
             })
             .catch((err) => {
                 console.log('Ops!');
@@ -100,64 +97,59 @@ export default class Playlists extends React.Component {
 
     deletaPlaylist = (idPlaylist) => {
         axios
-          .delete(`https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/${idPlaylist}`,
-          headers
-          )
-          .then((res) => console.log(res))
-          .catch((err) => console.log(err.response))
-      }
+            .delete(`https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/${idPlaylist}`,
+                headers
+            )
+            .then((res) => console.log(res))
+            .catch((err) => console.log(err.response))
+    }
 
-    // abrePlaylist = (idPlaylist) => {
-    //     axios
-    //     .get(`https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/${idPlaylist}/tracks`, headers)
-    //     .then((res) => {
-    //         this.setState({ playlists: res.data.result.list })
-    //         console.log(res.data)
-    //     })
-    //     .catch((err)=>{})
-            
-    //}
 
     render() {
-        
-        let secao;
+        if (this.state.detalhe) {
+            return (
+              <Playlist
+              playlistSelecionada={this.state.playlistSelecionada}
+              />
+            );
+          }
 
-        switch (this.state.page) {
-            case 'playlist':
-                secao=<Playlist/>;
-                break;
-            default:
-                secao =<p>Nenhuma secao selecionada</p>
-                break;
-        }
 
-        const playlistsRenderizadas = this.state.playlists.map((playlist) => {
+        const playlistsRenderizadas = this.state.playlists.map((playlist, i) => {
             return <StyledPlaylists>
-                <PlaylistP key={playlist.id} onClick={this.irParaPlaylist}>
+                <PlaylistP key={playlist.id}>
                     {playlist.name}
                 </PlaylistP>
 
-                <BotaoExcluir 
-                onClick={() => this.deletaPlaylist(playlist.id)}>x</BotaoExcluir>
-                {playlist.id}
+                <BotaoExcluir
+                    onClick={() => this.deletaPlaylist(playlist.id)}>x</BotaoExcluir>
+
+                <button 
+                onClick={() => this.renderizaDetalhe(playlist)}>Abrir</button>
 
             </StyledPlaylists>
         })
+
+
         return (
             <div>
-                <input 
-                type="text" 
-                placeholder="Nome da Playlist" 
-                value={this.state.nome} 
-                onChange={this.pegaNomePlaylist} />
+                <input
+                    type="text"
+                    placeholder="Nome da Playlist"
+                    value={this.state.nome}
+                    onChange={this.pegaNomePlaylist} />
 
-                <button 
-                onClick={this.criaPlaylist}>
-                <ImgAddPlaylist src={soma}></ImgAddPlaylist></button>
+                <button
+                    onClick={this.criaPlaylist}>
+                    +</button>
                 <br />
-                
+
+
+
                 {playlistsRenderizadas}
-                {secao}
+                {/* {playlistSelecRender} */}
+                
+
 
             </div>
         )

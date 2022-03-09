@@ -11,13 +11,13 @@ const DivLogin = styled.div`
 
 const MsgP = styled.p`
   display: flex;
-  margin: 40vh auto 0;
+  /* margin: 40vh auto 0; */
   color: #27db27;
 `
 
 const BtnClickLogin = styled.button`
   display: flex;
-  margin: 5vh auto 0;
+  /* margin: 5vh auto 0; */
   color: #464646;
 `
 
@@ -27,7 +27,7 @@ export default class Login extends React.Component {
     return (
       <DivLogin>
         <MsgP>Bem-vind@ ao Labefy!</MsgP>
-          <BtnClickLogin onClick={this.props.onClickLogin}>Login</BtnClickLogin>
+          <BtnClickLogin onClick={this.props.irParaPlaylists}>Login</BtnClickLogin>
       </DivLogin>
     )
   }

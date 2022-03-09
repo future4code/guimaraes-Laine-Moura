@@ -9,19 +9,27 @@ const headers = {
     }
 }
 
-export default class Playlist extends React.Component {
+const urlTodasPlaylists = 'https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists'
+
+
+ export default class Playlist extends React.Component {
     state={
         playlists: [],
-        page: false
+        exibePlaylist:[]
+       
     }
-    login = () => this.setState({playlists: true})
+
+    
+    // componentDidUpdate () {
+        //     this.pegaPlaylist()
+        // }
 
     pegaPlaylist = () => {
         axios
-            .get(this.props.urlTodasPlaylists, headers)
+            .get(urlTodasPlaylists, headers)
             .then((res) => {
-                this.setState({ playlists: res.data.result.list })
-                console.log(res.data)
+                this.setState({ playlists: res.data.result.tracks })
+                // console.log(res.data)
             })
             .catch((err) => {
                 console.log('Ops!');
@@ -29,27 +37,45 @@ export default class Playlist extends React.Component {
 
 
     }
-    abrePlaylist = (idPlaylist) => {
+    
+    
+    abrePlaylist = () => {
         axios
-        .get(`https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/${idPlaylist}/tracks`, headers)
-        .then((res) => {
-            this.setState({ playlists: res.data.quantity.tracks })
-            console.log(res.data)
-        })
-        .catch((err) => {
-            console.log('Ops!');
-        })
+            .get(`https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/${this.props.playlistSelecionada.id}/tracks`, headers)
+            .then((res) => {
+                this.setState({ exibePlaylist: res.data.result.tracks })
+            })
+            .catch((err) => { })
+
     }
-         
+    
+    componentDidMount () {
+        this.abrePlaylist()
+
+    }
+
   render() {
-      const playlistRenderizada = this.state.playlists.map((playlist)=>{
-        <div key={playlist.id} >
-    </div>
-      })
+    const playlistSelecRender = this.state.exibePlaylist.map((musica, i) => {
+        return <div>
+            <div key={musica.id}>
+                <p>{musica.name}</p>
+                <p>{musica.artist}</p>
+                <p>{musica.url}</p>
+
+            </div>
+        </div>
+    })
+
+
     return (
       <div>
-          Sua Playlist aqui
+        {playlistSelecRender}
+        
+        <button onClick={this.props.irParaPlaylists}>Voltar</button>
+          
       </div>
     )
   }
 }
+
+
