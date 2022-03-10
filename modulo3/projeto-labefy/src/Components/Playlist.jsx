@@ -44,9 +44,25 @@ const BtnVoltar = styled.button`
  export default class Playlist extends React.Component {
     state={
         playlists: [],
-        exibePlaylist:[]
+        exibePlaylist:[],
+        name: '', 
+        artist: '',
+        url: '',
        
-    }    
+    }  
+    
+    pegaNomeMusica = (e) => {
+        this.setState({ name: e.target.value })
+
+    }
+    pegaArtistaMusica = (e) => {
+        this.setState({ artist: e.target.value })
+
+    }
+    pegaUrlMusica = (e) => {
+        this.setState({ url: e.target.value })
+
+    }
     
     abrePlaylist = () => {
         axios
@@ -57,6 +73,25 @@ const BtnVoltar = styled.button`
             .catch((err) => { })
 
     }
+
+    criaMusica = () => {
+        const body = {
+            name: this.state.name,
+            artist: this.state.artist,
+            url: this.state.url,
+        }
+
+    
+    axios
+    .post(`https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/${this.props.playlistSelecionada.id}/tracks`, body,headers)
+    .then((res) => {
+        this.setState({ name: '', artist: '', url: '' });
+        this.abrePlaylist();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
     
     componentDidMount () {
         this.abrePlaylist()
@@ -78,7 +113,34 @@ const BtnVoltar = styled.button`
 
     return (
       <TelaDiv>
+           <input
+                    type="text"
+                    placeholder="Nome da Música"
+                    value={this.state.name}
+                    onChange={this.pegaNomeMusica} />
+            <br/>
+            <input
+                    type="text"
+                    placeholder="Nome do Artista"
+                    value={this.state.artist}
+                    onChange={this.pegaArtistaMusica} />
+            <br/>
+            
+            <input
+                    type="text"
+                    placeholder="Url"
+                    value={this.state.url}
+                    onChange={this.pegaUrlMusica} />
+            <br/>
+
+            <button onClick={this.criaMusica}>Adicionar Música</button>
+            <br/>
+
+
         {playlistSelecRender}
+
+        <br/>
+        <br/>
         
         <BtnVoltar onClick={this.props.renderizaPaginaPlaylist}>Voltar</BtnVoltar>
           
