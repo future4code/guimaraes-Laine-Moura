@@ -54,10 +54,6 @@ const ImgAddPlaylist = styled.img`
    
 `
 
-// const BtnAbrirPlaylist = styled.button`
-//     height: 3vh;
-// `
-
 /*fim do styled-components*/
 
 export default class Playlists extends React.Component {
@@ -145,9 +141,6 @@ export default class Playlists extends React.Component {
                 <BotaoExcluir
                     onClick={() => this.deletaPlaylist(playlist.id)}>x</BotaoExcluir>
 
-                {/* <BtnAbrirPlaylist
-                    onClick={() => this.renderizaDetalhe(playlist)}>Abrir</BtnAbrirPlaylist> */}
-
             </StyledPlaylistsDiv>
         })
 
@@ -165,12 +158,7 @@ export default class Playlists extends React.Component {
                     +</button>
                 <br />
 
-
-
                 {playlistsRenderizadas}
-                {/* {playlistSelecRender} */}
-                
-
 
             </TelaDiv>
         )

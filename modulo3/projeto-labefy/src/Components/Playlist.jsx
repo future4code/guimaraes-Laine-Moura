@@ -49,7 +49,6 @@ const BtnVoltar = styled.button`
 
  export default class Playlist extends React.Component {
     state={
-        playlists: [],
         exibePlaylist:[],
         name: '', 
         artist: '',
