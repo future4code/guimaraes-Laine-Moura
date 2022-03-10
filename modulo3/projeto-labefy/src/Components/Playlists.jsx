@@ -56,6 +56,10 @@ export default class Playlists extends React.Component {
         this.setState({detalhe: true, playlistSelecionada:  mostraPlaylist})
     }
 
+    renderizaPaginaPlaylist = () => {
+        this.setState({detalhe: false})
+    }
+
     componentDidMount() {
         this.pegaPlaylist()
     }
@@ -109,6 +113,7 @@ export default class Playlists extends React.Component {
         if (this.state.detalhe) {
             return (
               <Playlist
+              renderizaPaginaPlaylist={this.renderizaPaginaPlaylist}
               playlistSelecionada={this.state.playlistSelecionada}
               />
             );

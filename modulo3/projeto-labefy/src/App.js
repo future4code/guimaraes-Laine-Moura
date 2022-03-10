@@ -4,6 +4,7 @@ import Login from "./Components/Login";
 import Playlist from "./Components/Playlist";
 import styled from "styled-components";
 
+
 const Body = styled.body`
   margin: 0;
   padding: 0;
@@ -22,9 +23,7 @@ export default class App extends React.Component {
        case "login":
          return <Login irParaPlaylists={this.irParaPlaylists}/>
        case "playlists":
-         return <Playlists irParaPlaylist={this.irParaPlaylist}/>
-       case "playlist":
-         return <Playlist irParaPlaylists={this.irParaPlaylist}/>
+         return <Playlists />
         default:
           return <p>Opa, algo deu errado</p>
     }
@@ -33,11 +32,6 @@ export default class App extends React.Component {
   irParaPlaylists = () => {
     this.setState({tela: "playlists"})
   }
-
-  irParaPlaylist = () => {
-    this.setState({tela: "playlist"})
-  }
-
 
   render(){
   return (

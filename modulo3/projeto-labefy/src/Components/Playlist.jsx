@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-import Playlists from './Playlists'
+import styled from 'styled-components'
 
 
 const headers = {
@@ -11,6 +11,26 @@ const headers = {
 
 const urlTodasPlaylists = 'https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists'
 
+/*styled components */
+
+const NomeMusicaP = styled.p`
+    color: white;
+    text-align: center;
+`
+
+const ArtistaMusicaP = styled.p`
+    text-align: center;
+`
+
+const UrlMusicaP = styled.p`
+    text-align: center;
+    cursor: pointer;
+`
+
+const BtnVoltar = styled.button`
+    justify-self: center;
+`
+
 
  export default class Playlist extends React.Component {
     state={
@@ -19,24 +39,6 @@ const urlTodasPlaylists = 'https://us-central1-labenu-apis.cloudfunctions.net/la
        
     }
 
-    
-    // componentDidUpdate () {
-        //     this.pegaPlaylist()
-        // }
-
-    pegaPlaylist = () => {
-        axios
-            .get(urlTodasPlaylists, headers)
-            .then((res) => {
-                this.setState({ playlists: res.data.result.tracks })
-                // console.log(res.data)
-            })
-            .catch((err) => {
-                console.log('Ops!');
-            })
-
-
-    }
     
     
     abrePlaylist = () => {
@@ -58,9 +60,9 @@ const urlTodasPlaylists = 'https://us-central1-labenu-apis.cloudfunctions.net/la
     const playlistSelecRender = this.state.exibePlaylist.map((musica, i) => {
         return <div>
             <div key={musica.id}>
-                <p>{musica.name}</p>
-                <p>{musica.artist}</p>
-                <p>{musica.url}</p>
+                <NomeMusicaP>{musica.name}</NomeMusicaP>
+                <ArtistaMusicaP>{musica.artist}</ArtistaMusicaP>
+                <UrlMusicaP>{musica.url}</UrlMusicaP>
 
             </div>
         </div>
@@ -71,7 +73,7 @@ const urlTodasPlaylists = 'https://us-central1-labenu-apis.cloudfunctions.net/la
       <div>
         {playlistSelecRender}
         
-        <button onClick={this.props.irParaPlaylists}>Voltar</button>
+        <BtnVoltar onClick={this.props.renderizaPaginaPlaylist}>Voltar</BtnVoltar>
           
       </div>
     )
