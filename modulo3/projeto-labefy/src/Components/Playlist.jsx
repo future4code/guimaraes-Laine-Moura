@@ -31,9 +31,15 @@ const ArtistaMusicaP = styled.p`
     text-align: center;
 `
 
-const UrlMusicaP = styled.p`
+const PlayAudio = styled.audio`
     text-align: center;
     cursor: pointer;
+    width: 20%;
+    height: 4vh;
+`
+
+const PlayAudioSource = styled.source`
+    color: red;
 `
 
 const BtnVoltar = styled.button`
@@ -104,7 +110,9 @@ const BtnVoltar = styled.button`
             <div key={musica.id}>
                 <NomeMusicaP>{musica.name}</NomeMusicaP>
                 <ArtistaMusicaP>{musica.artist}</ArtistaMusicaP>
-                <UrlMusicaP>{musica.url}</UrlMusicaP>
+                <PlayAudio controls >
+                    <PlayAudioSource src={musica.url} type={'audio/mp3'}></PlayAudioSource>
+                </PlayAudio> 
 
             </div>
         </div>
@@ -134,6 +142,7 @@ const BtnVoltar = styled.button`
             <br/>
 
             <button onClick={this.criaMusica}>Adicionar Música</button>
+            <br/>
             <br/>
 
 
