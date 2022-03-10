@@ -16,11 +16,15 @@ const urlTodasPlaylists = 'https://us-central1-labenu-apis.cloudfunctions.net/la
 const TelaDiv = styled.div`
     text-align: center;
     margin: 0 auto;
+    padding: 0 0;
     `
 
 const NomeMusicaP = styled.p`
     color: white;
     text-align: center;
+    margin: 0 0;
+
+
 `
 
 const ArtistaMusicaP = styled.p`
