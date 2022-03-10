@@ -1,7 +1,6 @@
 import React from "react"
 import Playlists from "./Components/Playlists"
 import Login from "./Components/Login";
-import Playlist from "./Components/Playlist";
 import styled from "styled-components";
 
 

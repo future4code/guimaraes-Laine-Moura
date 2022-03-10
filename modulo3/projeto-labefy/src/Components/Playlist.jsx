@@ -13,6 +13,11 @@ const urlTodasPlaylists = 'https://us-central1-labenu-apis.cloudfunctions.net/la
 
 /*styled components */
 
+const TelaDiv = styled.div`
+    text-align: center;
+    margin: 0 auto;
+    `
+
 const NomeMusicaP = styled.p`
     color: white;
     text-align: center;
@@ -37,9 +42,7 @@ const BtnVoltar = styled.button`
         playlists: [],
         exibePlaylist:[]
        
-    }
-
-    
+    }    
     
     abrePlaylist = () => {
         axios
@@ -70,12 +73,12 @@ const BtnVoltar = styled.button`
 
 
     return (
-      <div>
+      <TelaDiv>
         {playlistSelecRender}
         
         <BtnVoltar onClick={this.props.renderizaPaginaPlaylist}>Voltar</BtnVoltar>
           
-      </div>
+      </TelaDiv>
     )
   }
 }
