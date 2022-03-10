@@ -23,23 +23,30 @@ const NomeMusicaP = styled.p`
     color: white;
     text-align: center;
     margin: 0 0;
-
-
 `
 
 const ArtistaMusicaP = styled.p`
     text-align: center;
+    margin: 0 0;
+    padding: 0 1vw;
 `
 
 const PlayAudio = styled.audio`
+    margin: 0 0;
     text-align: center;
     cursor: pointer;
-    width: 20%;
+    width: 15%;
     height: 4vh;
 `
 
 const PlayAudioSource = styled.source`
     color: red;
+`
+
+const CardMusicaDiv = styled.div`
+    display: flex;
+    place-content: center;
+    padding: 2vh 0;
 `
 
 const BtnVoltar = styled.button`
@@ -104,16 +111,16 @@ const BtnVoltar = styled.button`
     }
 
   render() {
-    const playlistSelecRender = this.state.exibePlaylist.map((musica, i) => {
+    const playlistRenderizada = this.state.exibePlaylist.map((musica, i) => {
         return <div>
-            <div key={musica.id}>
+            <CardMusicaDiv key={musica.id}>
                 <NomeMusicaP>{musica.name}</NomeMusicaP>
                 <ArtistaMusicaP>{musica.artist}</ArtistaMusicaP>
                 <PlayAudio controls >
                     <PlayAudioSource src={musica.url} type={'audio/mp3'}></PlayAudioSource>
                 </PlayAudio> 
 
-            </div>
+            </CardMusicaDiv>
         </div>
     })
 
@@ -145,7 +152,7 @@ const BtnVoltar = styled.button`
             <br/>
 
 
-        {playlistSelecRender}
+        {playlistRenderizada}
 
         <br/>
         <br/>

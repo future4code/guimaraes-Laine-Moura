@@ -11,6 +11,7 @@ const DivLogin = styled.div`
 
 const MsgP = styled.p`
   display: flex;
+  font-size: 2rem;
   margin: 40vh auto 0;
   color: #27db27;
 `

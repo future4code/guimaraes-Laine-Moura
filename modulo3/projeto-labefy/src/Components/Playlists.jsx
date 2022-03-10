@@ -139,7 +139,7 @@ export default class Playlists extends React.Component {
                 </PlaylistP>
 
                 <BotaoExcluir
-                    onClick={() => this.deletaPlaylist(playlist.id)}>x</BotaoExcluir>
+                    onClick={() => {if(window.confirm('Deletar Playlist?')) {this.deletaPlaylist(playlist.id)}}}>x</BotaoExcluir>
 
             </StyledPlaylistsDiv>
         })
