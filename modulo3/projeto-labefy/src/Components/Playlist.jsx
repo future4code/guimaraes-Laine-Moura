@@ -17,6 +17,8 @@ const TelaDiv = styled.div`
     text-align: center;
     margin: 0 auto;
     padding: 0 0;
+    background: #191414;
+    height: 100vh;
     `
 
 const NomeMusicaP = styled.p`
@@ -27,6 +29,7 @@ const NomeMusicaP = styled.p`
 
 const ArtistaMusicaP = styled.p`
     text-align: center;
+    color: #1DB954;
     margin: 0 0;
     padding: 0 1vw;
 `
@@ -49,8 +52,16 @@ const CardMusicaDiv = styled.div`
     padding: 2vh 0;
 `
 
+const PlaylistDiv = styled.div`
+    margin: 20vh auto 10vh;
+`
+
 const BtnVoltar = styled.button`
     justify-self: center;
+    background: #1DB954;
+    border-radius: 5%;
+    border: 0;
+    cursor: pointer;
 `
 
 
@@ -152,7 +163,7 @@ const BtnVoltar = styled.button`
             <br/>
 
 
-        {playlistRenderizada}
+        <PlaylistDiv>{playlistRenderizada}</PlaylistDiv>
 
         <br/>
         <br/>

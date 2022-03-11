@@ -15,9 +15,11 @@ export const headers = {
 
 /*styled-components */
 
-const TelaDiv = styled.div`
+const Body = styled.body`
+    background-color: #191414;
     text-align: center;
     margin: 0 auto;
+    height: 100vh;
     `
 
 const StyledPlaylistsDiv = styled.div`
@@ -26,8 +28,15 @@ const StyledPlaylistsDiv = styled.div`
     text-align: center;
 `
 
+const CriaPlaylistInput = styled.input`
+
+  margin: 30vh auto 0;
+`
+
 const PlaylistP = styled.p`
     cursor: pointer;
+    font-size: 1rem;
+    color: #1DB954;
     &:hover {
         color: white ;
     }
@@ -146,8 +155,8 @@ export default class Playlists extends React.Component {
 
 
         return (
-            <TelaDiv>
-                <input
+            <Body>
+                <CriaPlaylistInput
                     type="text"
                     placeholder="Nome da Playlist"
                     value={this.state.nome}
@@ -160,7 +169,7 @@ export default class Playlists extends React.Component {
 
                 {playlistsRenderizadas}
 
-            </TelaDiv>
+            </Body>
         )
     }
 }

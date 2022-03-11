@@ -1,6 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
+import backgroundinicial from '../assets/backgroundinicial.jpg'
 
+
+const Body = styled.body`
+  height: 100vh;
+  background-image: url(${backgroundinicial});
+  background-size: cover;
+  text-align: center;
+   margin: 0 auto;
+  height: 100vh;
+`
 
 const DivLogin = styled.div`
   width: 100vw;
@@ -12,8 +22,8 @@ const DivLogin = styled.div`
 const MsgP = styled.p`
   display: flex;
   font-size: 2rem;
-  margin: 40vh auto 0;
-  color: #27db27;
+  margin: 30vh auto 0;
+  color: gray;
 `
 
 const BtnClickLogin = styled.button`
@@ -26,10 +36,12 @@ const BtnClickLogin = styled.button`
 export default class Login extends React.Component {
   render() {
     return (
-      <DivLogin>
-        <MsgP>Bem-vind@ ao Labefy!</MsgP>
-          <BtnClickLogin onClick={this.props.irParaPlaylists}>Login</BtnClickLogin>
-      </DivLogin>
+      <Body>
+        <DivLogin>
+          <MsgP>Bem-vind@ ao Labefy!</MsgP>
+            <BtnClickLogin onClick={this.props.irParaPlaylists}>Login</BtnClickLogin>
+        </DivLogin>
+      </Body>
     )
   }
 }
