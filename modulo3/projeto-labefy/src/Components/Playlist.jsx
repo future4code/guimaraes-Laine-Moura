@@ -19,7 +19,13 @@ const TelaDiv = styled.div`
     padding: 0 0;
     background: #191414;
     height: 100vh;
-    `
+`
+
+const InputsDiv = styled.div`
+    margin: 0 auto 2vh;
+    border: 1px solid #1DB954;
+    width: min-content;
+`
 
 const NomeMusicaP = styled.p`
     color: white;
@@ -54,6 +60,14 @@ const CardMusicaDiv = styled.div`
 
 const PlaylistDiv = styled.div`
     margin: 20vh auto 10vh;
+`
+
+const BtnAdicionarMusica = styled.button`
+    justify-self: center;
+    background: #1DB954;
+    border-radius: 5%;
+    border: 0;
+    cursor: pointer;
 `
 
 const BtnVoltar = styled.button`
@@ -138,27 +152,29 @@ const BtnVoltar = styled.button`
 
     return (
       <TelaDiv>
-           <input
-                    type="text"
-                    placeholder="Nome da Música"
-                    value={this.state.name}
-                    onChange={this.pegaNomeMusica} />
-            <br/>
-            <input
-                    type="text"
-                    placeholder="Nome do Artista"
-                    value={this.state.artist}
-                    onChange={this.pegaArtistaMusica} />
-            <br/>
-            
-            <input
-                    type="text"
-                    placeholder="Url"
-                    value={this.state.url}
-                    onChange={this.pegaUrlMusica} />
-            <br/>
+           <InputsDiv>
+               <input
+                        type="text"
+                        placeholder="Nome da Música"
+                        value={this.state.name}
+                        onChange={this.pegaNomeMusica} />
+                <br/>
+                <input
+                        type="text"
+                        placeholder="Nome do Artista"
+                        value={this.state.artist}
+                        onChange={this.pegaArtistaMusica} />
+                <br/>
+               
+                <input
+                        type="text"
+                        placeholder="Url"
+                        value={this.state.url}
+                        onChange={this.pegaUrlMusica} />
+                <br/>
+           </InputsDiv>
 
-            <button onClick={this.criaMusica}>Adicionar Música</button>
+            <BtnAdicionarMusica onClick={this.criaMusica}>Adicionar Música</BtnAdicionarMusica>
             <br/>
             <br/>
 
