@@ -40,7 +40,7 @@ const ArtistaMusicaP = styled.p`
     padding: 0 1vw;
 `
 
-const PlayAudio = styled.video`
+const PlayAudio = styled.audio`
     margin: 0 0;
     text-align: center;
     cursor: pointer;
