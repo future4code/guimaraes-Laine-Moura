@@ -42,7 +42,7 @@ const PlaylistP = styled.p`
     }
 
 `
-const BotaoExcluir = styled.button`
+export const BotaoExcluir = styled.button`
   display: inline-flex;
   background: inherit;
   border:0;

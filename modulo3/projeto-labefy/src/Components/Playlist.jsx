@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
-
+import { BotaoExcluir } from './Playlists'
 
 const headers = {
     headers: {
@@ -132,6 +132,16 @@ const BtnVoltar = styled.button`
     
     componentDidMount () {
         this.abrePlaylist()
+    }
+    componentDidUpdate () {
+        this.abrePlaylist()
+    }
+
+    deletaMusica = (musica) => {
+        axios
+        .delete(`https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/${this.props.playlistSelecionada.id}/tracks/${musica}`, headers)
+        .then((res) => console.log(musica))
+        .catch((err) => console.log(musica))
 
     }
 
@@ -144,6 +154,9 @@ const BtnVoltar = styled.button`
                 <PlayAudio controls >
                     <PlayAudioSource src={musica.url} type={'audio/mp3'}></PlayAudioSource>
                 </PlayAudio> 
+                <BotaoExcluir
+                    onClick={() => {if(window.confirm('Deletar Música?')) {this.deletaMusica(musica.id)}}}> x
+                </BotaoExcluir>
 
             </CardMusicaDiv>
         </div>
