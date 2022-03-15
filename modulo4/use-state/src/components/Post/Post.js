@@ -39,6 +39,18 @@ const Post = (props) => {
 
   const iconeCurtida = curtido ? iconeCoracaoPreto : iconeCoracaoBranco
 
+  const caixaDeComentario = comentando ? (
+    <SecaoComentario enviarComentario={enviarComentario} />
+  ) : (
+    comentarios.map((comentario) => {
+      return (
+        <CommentContainer>
+          <p>{comentario}</p>
+        </CommentContainer>
+      );
+    })
+  );
+
   return (
     <PostContainer>
       <PostHeader>
@@ -58,10 +70,10 @@ const Post = (props) => {
         <IconeComContador
           icone={iconeComentario}
           onClickIcone={onClickComentario}
-          // valorContador={numeroComentarios}
+          valorContador={numeroComentarios}
         />
       </PostFooter>
-      {/* {caixaDeComentario} */}
+      {caixaDeComentario}
     </PostContainer>
   )
 }
