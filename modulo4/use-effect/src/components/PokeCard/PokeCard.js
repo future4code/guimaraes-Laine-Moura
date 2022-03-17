@@ -8,12 +8,8 @@ const PokeCard = (props) => {
         const pegaPokemon = () => {
           axios
             .get(`https://pokeapi.co/api/v2/pokemon/${props.pokeName}`)
-            .then(res => {
-              setPokemon(res.data);
-            })
-            .catch(err => {
-              console.log(err);
-            });
+            .then(res => setPokemon(res.data))
+            .catch(err => console.log(err));
         };
         pegaPokemon()
       },
@@ -33,4 +29,4 @@ const PokeCard = (props) => {
     );
   }
 
-    export default PokeCard;
+export default PokeCard;
