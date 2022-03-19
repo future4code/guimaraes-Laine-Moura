@@ -1,10 +1,9 @@
-import React, {useState, useEffect} from "react";
+import React from 'react'
 
 function App() {
   return (
     <div>
-      <p>Astromatch</p>
-      
+     <p>a s t r o m a t c h</p> 
     </div>
   );
 }
