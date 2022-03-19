@@ -9,7 +9,7 @@ const TelaPrincipal = (props) => {
   const pegaPerfil = () => {
     axios
       .get(`${url}/person`)
-      .then((res) => setPerfil.data.perfil)
+      .then((res) => setPerfil(res.data.profile))
       .catch((err) => console.log(err))
   }
 
@@ -27,8 +27,30 @@ const TelaPrincipal = (props) => {
       .catch((err) => console.log(err))
   }
 
+  const descurtirPerfil = () => {
+    const body = {
+      id: perfil.id,
+      choice: false,
+    }
+
+    axios
+      .post(`${url}/choose-person`, body)
+      .then((res) => pegaPerfil())
+      .catch((err) => console.log(err))
+  }
+
   return (
-    <div>TelaPrincipal</div>
+    <div>
+      <div>
+        <img width={'100vw'} src={perfil.photo}></img>
+        <p>{perfil.name}</p>
+        <p>{perfil.age}</p>
+        <p>{perfil.bio}</p>
+      </div>
+      <button onClick={curtirPerfil}>Curtir</button>
+      <button onClick={descurtirPerfil}>Descurtir</button>
+
+    </div>
   )
 }
 
