@@ -1,4 +1,4 @@
-import React, {useState,useEffect} from 'react'
+import React, {useState} from 'react'
 import axios from 'axios';
 import TelaPrincipal from './components/TelaPrincipal/TelaPrincipal'
 import TelaMatch from './components/TelaMatch/TelaMatch';
@@ -14,7 +14,8 @@ const App = () => {
         return <TelaPrincipal onChangeTelaMatch = {onChangeTelaMatch}/> 
       case 'match':
         return <TelaMatch onChangeTelaPrincipal = {onChangeTelaPrincipal}/>
-        return <p> Oppps! </p>;
+      default:
+        <p> Oppps! </p>;
     }
   }
 
