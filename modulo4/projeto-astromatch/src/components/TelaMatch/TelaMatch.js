@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios'
 import { url } from '../TelaPrincipal/TelaPrincipal'
+import {DivMatch, FotoMiniaturaImg, MatchNameP, MatchAgeP, BtnVoltar} from './StyledTelaMatch'
 
 const TelaMatch = (props) => {
   const [listaMatches, setListaMatches] = useState([])
@@ -18,12 +19,16 @@ const TelaMatch = (props) => {
     <div>
       {listaMatches.map((match) => {
         return (
-          <img width={'100vw'}src={match.photo}/>
+          <DivMatch>
+            <FotoMiniaturaImg width={'100vw'}src={match.photo}/>
+            <MatchNameP>{match.name}</MatchNameP>
+            <MatchAgeP>{match.age}</MatchAgeP>
+          </DivMatch>
 
         )
       })}
       <br/>
-      <button onClick={props.onChangeTelaPrincipal}>Voltar</button>
+      <BtnVoltar onClick={props.onChangeTelaPrincipal}>Voltar</BtnVoltar>
     </div>
   )
 }

@@ -28,3 +28,8 @@ export const BioP = styled.p`
 export const DivBotoes = styled.div`
      text-align: center;
 `
+
+export const BtnLimpar = styled.button`
+    display: flex;
+    margin: 0 auto;
+`
