@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { DivCard, DivBotoes, FotoPerfilImg, NomeP, IdadeP, BioP } from './StyledTelaPrincipal'
+import { DivContainer, DivCard, FotoPerfilImg, NomeP, IdadeP, BioP, DivBotoes, BtnCurtir, BtnDescurtir, BtnVerMatches } from './StyledTelaPrincipal'
 
 export const url = `https://us-central1-missao-newton.cloudfunctions.net/astroMatch/laine` 
 
@@ -41,23 +41,22 @@ const TelaPrincipal = (props) => {
   }
 
   return (
-    <div>
+    <DivContainer>
       <DivCard>
         <FotoPerfilImg src={perfil.photo}/>
         <NomeP>{perfil.name}</NomeP>
-        <br/>
         <IdadeP>{perfil.age}</IdadeP>
         <BioP>{perfil.bio}</BioP>
       </DivCard>
       <DivBotoes>
-        <button onClick={curtirPerfil}>&#128293;</button>
-        <button onClick={descurtirPerfil}>&#128078;</button>
+        <BtnCurtir onClick={curtirPerfil}>&#128293;</BtnCurtir>
+        <BtnDescurtir onClick={descurtirPerfil}>&#128078;</BtnDescurtir>
         <br/>
         <br/>
-        <button onClick={props.onChangeTelaMatch}>Ver matches</button>
+        <BtnVerMatches onClick={props.onChangeTelaMatch}>Ver matches</BtnVerMatches>
       </DivBotoes>
 
-    </div>
+    </DivContainer>
   )
 }
 
