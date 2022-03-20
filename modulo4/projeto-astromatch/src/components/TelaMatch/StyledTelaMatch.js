@@ -36,5 +36,12 @@ export const BtnVoltar = styled.button`
     border: inherit;
     cursor: pointer;
     color: #c20d7c;
+    justify-content: center;
+    align-items: center;
     background: #ffbb00;
+    @media screen and (max-width: 375px) {
+        height: 50px;
+        width: 150px;
+        font-size: 20px;
+  }
 `

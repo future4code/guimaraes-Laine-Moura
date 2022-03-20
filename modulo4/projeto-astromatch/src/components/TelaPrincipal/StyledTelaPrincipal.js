@@ -8,6 +8,9 @@ export const DivContainer = styled.div`
   background-color: #fff;
   border: 2px solid;
   border-image: linear-gradient(90deg, #c20d7c, #ffbb00 100%) 1;
+  @media screen and (max-width: 375px) {
+        width: 300px;
+  }
   
 `
 
@@ -32,6 +35,9 @@ export const NomeP = styled.p`
     font-family: 'Dosis', sans-serif;
     font-weight: 900;
     color: #c20d7c;
+    @media screen and (max-width: 375px) {
+        font-size: 24px;
+  }
 `
 export const IdadeP = styled.p`
     margin: 0;
@@ -44,11 +50,15 @@ export const BioP = styled.p`
     font-size: .7rem;
     font-family: 'Raleway', sans-serif;
     font-weight: 900;
+    @media screen and (max-width: 375px) {
+        font-size: 20px;
+  }
 `
 
 export const DivBotoes = styled.div`
      text-align: center;
      margin: 0 auto;
+     font-size: 1rem;
      text-align: center;
      justify-content: center;
 `
@@ -59,16 +69,22 @@ export const BtnInteracao = styled.button`
     &:hover{
     transform: scale(1.5);
     }
+    @media screen and (max-width: 375px) {
+        font-size: 40px;
+  }
 
 `
-
 
 export const BtnVerMatches = styled.button`
     border: inherit;
     cursor: pointer;
     color: #c20d7c;
     background: #ffbb00;
-
+    @media screen and (max-width: 375px) {
+        height: 50px;
+        width: 150px;
+        font-size: 20px;
+  }
 `
 
 export const BtnLimpar = styled.button`
@@ -78,4 +94,9 @@ export const BtnLimpar = styled.button`
     cursor: pointer;
     color: #ffbb00;
     background: #c20d7c;
+    @media screen and (max-width: 375px) {
+        height: 50px;
+        width: 150px;
+        font-size: 20px;
+  }
 `
