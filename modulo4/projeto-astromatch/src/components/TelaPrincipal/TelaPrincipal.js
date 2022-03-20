@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { DivCard } from './StyledTelaPrincipal'
+import { DivCard, DivBotoes } from './StyledTelaPrincipal'
 
 export const url = `https://us-central1-missao-newton.cloudfunctions.net/astroMatch/laine` 
 
@@ -45,11 +45,14 @@ const TelaPrincipal = (props) => {
       <DivCard>
         <img width={'100vw'} src={perfil.photo}></img>
         <p>{perfil.name}</p>
+        <br/>
         <p>{perfil.age}</p>
         <p>{perfil.bio}</p>
       </DivCard>
-      <button onClick={curtirPerfil}>Curtir</button>
-      <button onClick={descurtirPerfil}>Descurtir</button>
+      <DivBotoes>
+        <button onClick={curtirPerfil}>Curtir</button>
+        <button onClick={descurtirPerfil}>Descurtir</button>
+      </DivBotoes>
 
     </div>
   )
