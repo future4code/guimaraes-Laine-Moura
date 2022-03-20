@@ -7,6 +7,9 @@ export const DivContainer = styled.div`
   height: 8vh;
   border: 2px solid;
   border-image: linear-gradient(90deg, #c20d7c, #ffbb00 100%) 1;
+  @media screen and (max-width: 375px) {
+        width: 220px;
+  }
 `
 
 export const DivMatch = styled.div`

@@ -20,6 +20,10 @@ export const FotoPerfilImg = styled.img`
     height: 150px;
     border: 1px solid pink;
     border-image: linear-gradient(90deg, #ffbb00, #c20d7c 100%) 1;
+    @media screen and (max-width: 375px) {
+        width: 100px;
+        height: 100px;
+  }
 `
 
 export const NomeP = styled.p`
