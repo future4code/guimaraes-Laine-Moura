@@ -2,7 +2,6 @@ import React, {useState,useEffect} from 'react'
 import axios from 'axios';
 import TelaPrincipal from './components/TelaPrincipal/TelaPrincipal'
 import TelaMatch from './components/TelaMatch/TelaMatch';
-import {url} from './components/TelaPrincipal/TelaPrincipal';
 
 const App = () => {
   const [telaExibida, setTelaExibida] = useState('perfil')
@@ -10,10 +9,9 @@ const App = () => {
   const escolheTela = () => {
     switch (telaExibida) {
       case 'perfil':
-        return <TelaPrincipal onChangeTelaPrincipal = {onChangeTelaPrincipal}/>
+        return <TelaPrincipal onChangeTelaMatch = {onChangeTelaMatch}/> 
       case 'match':
-        return <TelaMatch onChangeTelaMatch = {onChangeTelaMatch}/>
-      default:
+        return <TelaMatch onChangeTelaPrincipal = {onChangeTelaPrincipal}/>
         return <p> Oppps! </p>;
     }
   }

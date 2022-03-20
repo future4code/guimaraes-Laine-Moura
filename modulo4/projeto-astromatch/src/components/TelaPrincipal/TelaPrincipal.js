@@ -52,6 +52,8 @@ const TelaPrincipal = (props) => {
       <DivBotoes>
         <button onClick={curtirPerfil}>Curtir</button>
         <button onClick={descurtirPerfil}>Descurtir</button>
+        <br/>
+        <button onClick={props.onChangeTelaMatch}>Ver matchs</button>
       </DivBotoes>
 
     </div>

@@ -1,7 +1,10 @@
 import React from 'react'
+import axios from 'axios'
 
-export default function TelaMatch() {
+const TelaMatch = () => {
   return (
     <div>TelaMatch</div>
   )
 }
+
+export default TelaMatch
