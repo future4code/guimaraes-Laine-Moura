@@ -6,7 +6,8 @@ export const DivCard = styled.div`
 `
 
 export const FotoPerfilImg = styled.img`
-    width: 15vw;
+    width: 100px;
+    height: 150px;
     border-radius: 5%;
 `
 

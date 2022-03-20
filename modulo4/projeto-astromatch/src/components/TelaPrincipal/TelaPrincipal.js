@@ -50,8 +50,9 @@ const TelaPrincipal = (props) => {
         <BioP>{perfil.bio}</BioP>
       </DivCard>
       <DivBotoes>
-        <button onClick={curtirPerfil}>Curtir</button>
-        <button onClick={descurtirPerfil}>Descurtir</button>
+        <button onClick={curtirPerfil}>&#128293;</button>
+        <button onClick={descurtirPerfil}>&#128078;</button>
+        <br/>
         <br/>
         <button onClick={props.onChangeTelaMatch}>Ver matches</button>
       </DivBotoes>
