@@ -48,7 +48,7 @@ export const DivBotoes = styled.div`
      text-align: center;
      justify-content: center;
 `
-export const BtnCurtir = styled.button`
+export const BtnInteracao = styled.button`
     border: inherit;
     background: inherit;
     cursor: pointer;
@@ -58,16 +58,6 @@ export const BtnCurtir = styled.button`
 
 `
 
-export const BtnDescurtir = styled.button`
-    border: inherit;
-    background: inherit;
-    cursor: pointer;
-    &:hover{
-    transform: scale(1.5);
-    }
-
-
-`
 
 export const BtnVerMatches = styled.button`
     border: inherit;

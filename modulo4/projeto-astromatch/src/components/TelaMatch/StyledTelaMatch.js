@@ -1,5 +1,14 @@
 import styled from 'styled-components'
 
+export const DivContainer = styled.div`
+  margin: 1vh auto;
+  padding: 5vh 1vh;
+  width: 20vw;
+  height: 8vh;
+  border: 2px solid;
+  border-image: linear-gradient(90deg, #c20d7c, #ffbb00 100%) 1;
+`
+
 export const DivMatch = styled.div`
     display: flex;
     margin: 0 auto;
