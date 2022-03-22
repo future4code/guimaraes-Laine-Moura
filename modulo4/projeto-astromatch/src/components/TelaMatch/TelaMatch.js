@@ -22,7 +22,7 @@ const TelaMatch = (props) => {
         return (
           <DivContainer>
             <DivMatch>
-              <FotoMiniaturaImg width={'100vw'}src={match.photo}/>
+              <FotoMiniaturaImg src={match.photo}/>
               <MatchNameP>{match.name}</MatchNameP>
               <MatchAgeP>{match.age}</MatchAgeP>
             </DivMatch>

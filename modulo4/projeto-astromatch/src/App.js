@@ -6,11 +6,11 @@ import { url } from './components/TelaPrincipal/TelaPrincipal';
 import { BtnLimpar } from './components/TelaPrincipal/StyledTelaPrincipal';
 
 const App = () => {
-  const [telaExibida, setTelaExibida] = useState('perfil')
+  const [telaExibida, setTelaExibida] = useState('principal')
 
   const escolheTela = () => {
     switch (telaExibida) {
-      case 'perfil':
+      case 'principal':
         return <TelaPrincipal onChangeTelaMatch = {onChangeTelaMatch}/> 
       case 'match':
         return <TelaMatch onChangeTelaPrincipal = {onChangeTelaPrincipal}/>
@@ -19,13 +19,13 @@ const App = () => {
     }
   }
 
-  const onChangeTelaPrincipal = () => setTelaExibida('perfil')
+  const onChangeTelaPrincipal = () => setTelaExibida('principal')
   const onChangeTelaMatch = () => setTelaExibida('match')
 
   const deletaMatch = () => {
     axios
       .put(`${url}/clear`)
-      .then((res) => setTelaExibida('perfil'))
+      .then((res) => setTelaExibida('principal'))
       .catch((err) => console.log(err))
   }
 
