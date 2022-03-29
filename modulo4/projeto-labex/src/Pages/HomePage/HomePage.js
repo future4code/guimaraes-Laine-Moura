@@ -1,7 +1,7 @@
 import React from 'react'
-import {ContainerPrincipal} from './StyledHome'
+import {ContainerPrincipal} from './StyledHomePage'
 
-export default function Home() {
+export default function HomePage() {
   return (
     <ContainerPrincipal>
       Home

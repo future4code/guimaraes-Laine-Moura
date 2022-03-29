@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import axios from 'axios';
 import Lista from './Pages/Lista/Lista'
-import Administacao from './Pages/Administracao/Administracao'
-import Home from './Pages/Home/Home'
+import AdminHomePage from './Pages/AdminHomePage/AdminHomePage'
+import HomePage from './Pages/HomePage/HomePage';
 
 const App = () => {
 
@@ -11,11 +11,11 @@ const App = () => {
   const escolheTela = () => {
   switch (tela) {
     case 'home':
-      return <Home/>
+      return <HomePage/>
     case 'lista':
       return <Lista onChangeTelaAdmin={onChangeTelaAdmin}/>
     case 'admin':
-      return <Administacao onChangeTelaLista={onChangeTelaLista}/>
+      return <AdminHomePage onChangeTelaLista={onChangeTelaLista}/>
     default:
       <p>Opppps</p>
       break;
