@@ -1,26 +1,21 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
-export default function ApplicationFormPage() {
+export default function ListTripsPage() {
 
 const navigate = useNavigate()
 const goToHomePage = () => navigate(-1)
+const applicationToTrip = () => navigate('applicationToTrip')
   return (
     <div>
-      <p>ApplicationFormPage</p>
+      <p>ListTripPage</p>
       
       <div>
-          <input />
-          <input />
-          <input />
-          <input />
-          <input />
-
+          <p>Viagem</p>
       </div>
 
       <button onClick={goToHomePage}>Voltar</button>
-      <button>Enviar</button>
-     
+      <button onClick={applicationToTrip}>Inscrição</button>
 
 
 

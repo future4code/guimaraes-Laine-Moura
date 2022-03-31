@@ -5,6 +5,7 @@ export default function LoginPage() {
 
 const navigate = useNavigate()
 const goToHomePage = () => navigate(-1)
+const goToAdminHomePage =() => navigate('adminHomePage')
   return (
     <div>
       <p>LoginPage</p>
@@ -13,7 +14,7 @@ const goToHomePage = () => navigate(-1)
       <br/>
       <br/>
       <button onClick={goToHomePage}>Voltar</button>
-      <button>Login</button>
+      <button onClick={goToAdminHomePage}>Login</button>
 
 
 
