@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 export default function LoginPage() {
 
 const navigate = useNavigate()
-const goToLogin = () => navigate('/login')
+const goToHomePage = () => navigate(-1)
   return (
     <div>
       <p>LoginPage</p>
@@ -12,7 +12,7 @@ const goToLogin = () => navigate('/login')
       <input type={'password'}/>
       <br/>
       <br/>
-      <button>Voltar</button>
+      <button onClick={goToHomePage}>Voltar</button>
       <button>Login</button>
 
 
