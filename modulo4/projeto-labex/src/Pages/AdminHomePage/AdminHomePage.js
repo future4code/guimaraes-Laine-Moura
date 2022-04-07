@@ -3,7 +3,8 @@ import { useNavigate } from 'react-router-dom'
 import useRequestData from '../../Hooks/UseRequestData'
 import axios from 'axios'
 import {url} from '../../App'
-import { TripDiv, BtnDelTrip } from './StyledAdminHomePage'
+import { TripDiv, BtnDelTrip, TrashcanImg, Btns } from './StyledAdminHomePage'
+import { MainDiv } from './StyledAdminHomePage'
 
 export default function AdminHomePage() {
 
@@ -12,12 +13,15 @@ export default function AdminHomePage() {
   const navigate = useNavigate()
 
 
-  const logout = () => localStorage.removeItem('token') 
+  const logout = () => {
+    localStorage.removeItem('token')
+    navigate('/')
+  } 
   const goToHomePage = () => navigate('/')
-  const createTrip = () => navigate('createTrip')
+  const createTrip = () => navigate('create')
   const goToTripDetails = (tripId) => {
     const tripIdentif = tripId
-      navigate(`/adminHomePage/${tripIdentif}`)
+      navigate(`/admin/trips/${tripIdentif}`)
   } 
 
   const deleteTrip = (trip) => {
@@ -30,32 +34,31 @@ export default function AdminHomePage() {
     if(window.confirm('Deseja deletar a viagem?')) {
       axios
       .delete(`${url}/trips/${trip.id}`, headers)
-      .then((res) => navigate('adminHomePage'), setListTrips() )
-      .catch((err) =>  navigate('adminHomePage'))
+      .then((res) => navigate('admin'), setListTrips() )
+      .catch((err) =>  err.response)
     }
   }
 
   return (
-    <div>
-    {listTrips?.trips.map((trip) => {
-      return (
-        <div onClick={() => goToTripDetails(trip.id)} key={trip.id}>
-            <TripDiv> {trip.name} 
-              <BtnDelTrip onClick={(e) => {
-                e.stopPropagation();
-                deleteTrip(trip)
-              }}> x
-            </BtnDelTrip>
-          </TripDiv>
-
-        </div>
-
-      )
-    })}
-
-    <button onClick={goToHomePage}>Voltar</button>
-    <button onClick={createTrip}>Criar Viagem</button>
-    <button onClick={logout}>Logout</button>
-  </div>
+      <MainDiv>
+      {listTrips?.trips.map((trip) => {
+        return (
+          <div onClick={() => goToTripDetails(trip.id)} key={trip.id}>
+              <TripDiv> {trip.name}
+                <BtnDelTrip onClick={(e) => {
+                  e.stopPropagation();
+                  deleteTrip(trip)
+                }}>
+                <TrashcanImg src='https://img.icons8.com/office/344/delete--v1.png' ></TrashcanImg>
+              </BtnDelTrip>
+            </TripDiv>
+            <br/>
+          </div>
+        )
+      })}
+      <Btns onClick={goToHomePage}>Voltar</Btns>
+      <Btns onClick={createTrip}>Criar Viagem</Btns>
+      <Btns onClick={logout}>Logout</Btns>
+        </MainDiv>
 );
 }
