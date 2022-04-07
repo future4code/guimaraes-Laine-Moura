@@ -1,18 +1,35 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
-import {ContainerPrincipal} from './StyledHomePage'
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { StyledBody, MainDiv, Title, Btns } from './StyledHomePage';
 
-export default function HomePage() {
+const HomePage = () => {
+  const navigate = useNavigate();
 
-const navigate = useNavigate()
-const goToLogin = () => navigate('/login')
-const goToListTripPage = () => navigate('listTrips')
+  const goToListTripsPage = () => {
+    navigate('/trips/list');
+  };
+
+  const goToLoginPage = () => {
+    navigate('/login');
+    const token = localStorage.getItem('token');
+    if (token === null) {
+      navigate('/login');
+    }
+    else {
+      navigate('/admin/trips/list');
+    };
+  };
+
 
   return (
-    <ContainerPrincipal>
-      <p>Home</p>
-      <button onClick={goToListTripPage}>Ver Viagens</button>
-      <button onClick={goToLogin}>Área de Admin</button>
-    </ContainerPrincipal>
-  )
-}
+    <StyledBody>
+      <MainDiv>
+        <Title>LabeX</Title>
+        <Btns onClick={goToListTripsPage}>Ver Viagens</Btns>
+        <Btns onClick={goToLoginPage}>Área de Administrador</Btns>
+      </MainDiv>
+    </StyledBody>
+  );
+};
+
+export default HomePage;
