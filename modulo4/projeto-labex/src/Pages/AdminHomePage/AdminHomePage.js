@@ -1,6 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import useRequestData from '../../Hooks/UseRequestData'
+import useRequestData from '../../Hooks/UseRequest'
 import axios from 'axios'
 import {url} from '../../App'
 import { TripDiv, BtnDelTrip, TrashcanImg, Btns } from './StyledAdminHomePage'
@@ -25,6 +25,7 @@ export default function AdminHomePage() {
   } 
 
   const deleteTrip = (trip) => {
+    
     const headers = {
       headers: {
         auth: localStorage.getItem('token')
@@ -34,7 +35,7 @@ export default function AdminHomePage() {
     if(window.confirm('Deseja deletar a viagem?')) {
       axios
       .delete(`${url}/trips/${trip.id}`, headers)
-      .then((res) => navigate('admin'), setListTrips() )
+      .then((res) => navigate('/admin/trips/list'), setListTrips() )
       .catch((err) =>  err.response)
     }
   }
@@ -46,10 +47,11 @@ export default function AdminHomePage() {
           <div onClick={() => goToTripDetails(trip.id)} key={trip.id}>
               <TripDiv> {trip.name}
                 <BtnDelTrip onClick={(e) => {
-                  e.stopPropagation();
                   deleteTrip(trip)
+                  navigate('/admin')
+                  e.stopPropagation();
                 }}>
-                <TrashcanImg src='https://img.icons8.com/office/344/delete--v1.png' ></TrashcanImg>
+                <TrashcanImg src='https://img.icons8.com/office/344/delete--v1.png'/>
               </BtnDelTrip>
             </TripDiv>
             <br/>
