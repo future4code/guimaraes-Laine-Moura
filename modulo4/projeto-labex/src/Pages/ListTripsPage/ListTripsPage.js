@@ -1,25 +1,21 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
-import { url } from "../../App";
-import useRequestData from "../../Hooks/UseRequest";
-import {  MainDiv, TripDiv, AllTripsDiv } from "./StyledListrips";
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { url } from '../../App';
+import useRequest from '../../Hooks/UseRequest';
+import {  MainDiv, TripDiv, AllTripsDiv } from './StyledListrips';
 import {TitleItem} from './StyledListrips'
-import { Btns } from "../AdminHomePage/StyledAdminHomePage";
+import { Btns } from '../AdminHomePage/StyledAdminHomePage';
 
 
 const ListTripsPage = () => {
 
-  const [listTrips] = useRequestData(`${url}/trips`)
+  const [listTrips] = useRequest(`${url}/trips`)
 
   const navigate = useNavigate()
 
-  const goBack = () => {
-    navigate(-1)
-  }
+  const goBack = () => navigate(-1)
 
-  const goToApplicationFormPage = () => {
-    navigate("/trips/application")
-  }
+  const goToApplicationFormPage = () => navigate('/trips/application')
 
 
 
