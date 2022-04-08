@@ -1,6 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import useRequestData from '../../Hooks/UseRequest'
+import useRequest from '../../Hooks/UseRequest'
 import axios from 'axios'
 import {url} from '../../App'
 import { TripDiv, BtnDelTrip, TrashcanImg, Btns } from './StyledAdminHomePage'
@@ -8,7 +8,7 @@ import { MainDiv } from './StyledAdminHomePage'
 
 export default function AdminHomePage() {
 
-  const [listTrips, setListTrips] = useRequestData(`${url}/trips`)
+  const [listTrips, setListTrips] = useRequest(`${url}/trips`)
 
   const navigate = useNavigate()
 
@@ -48,7 +48,7 @@ export default function AdminHomePage() {
               <TripDiv> {trip.name}
                 <BtnDelTrip onClick={(e) => {
                   deleteTrip(trip)
-                  navigate('/admin')
+                  {listTrips()}
                   e.stopPropagation();
                 }}>
                 <TrashcanImg src='https://img.icons8.com/office/344/delete--v1.png'/>
