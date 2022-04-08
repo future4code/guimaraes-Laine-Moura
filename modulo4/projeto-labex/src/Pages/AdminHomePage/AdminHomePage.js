@@ -35,7 +35,7 @@ export default function AdminHomePage() {
     if(window.confirm('Deseja deletar a viagem?')) {
       axios
       .delete(`${url}/trips/${trip.id}`, headers)
-      .then((res) => navigate('/admin/trips/list'), setListTrips() )
+      .then((res) => navigate('admin'), setListTrips() )
       .catch((err) =>  err.response)
     }
   }
