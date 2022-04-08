@@ -1,8 +1,10 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { url } from "../../App";
-import useRequestData from "../../Hooks/UseRequestData";
+import useRequestData from "../../Hooks/UseRequest";
+import {  MainDiv, TripDiv, AllTripsDiv } from "./StyledListrips";
 import {TitleItem} from './StyledListrips'
+import { Btns } from "../AdminHomePage/StyledAdminHomePage";
 
 
 const ListTripsPage = () => {
@@ -23,23 +25,25 @@ const ListTripsPage = () => {
 
   return (
 
-    <div>
-      <h1>Lista De Viagens</h1>
-      {listTrips?.trips.map((trip) => {
-        return (
-          <div>
-            <p key={trip.id}> <TitleItem> Nome: </TitleItem> {trip.name}</p>
-            <p> <TitleItem> Descrição: </TitleItem> {trip.description} </p>
-            <p> <TitleItem> Planeta: </TitleItem> {trip.planet} </p>
-            <p> <TitleItem> DUração em dias:</TitleItem> {trip.durationInDays}</p>
-            <p> <TitleItem> Data:</TitleItem> {trip.date}</p>
-            <br/>
-          </div>
-        )
-      })}
-      <button onClick={goBack}>Voltar</button>
-      <button onClick={goToApplicationFormPage}>Increva-se</button>
-    </div>
+    <MainDiv>
+        <h1>Lista De Viagens</h1>
+        {listTrips?.trips.map((trip) => {
+          return (
+            <AllTripsDiv>
+              <TripDiv>
+                <p key={trip.id}> <TitleItem> Nome: </TitleItem> {trip.name}</p>
+                <p> <TitleItem> Descrição: </TitleItem> {trip.description} </p>
+                <p> <TitleItem> Planeta: </TitleItem> {trip.planet} </p>
+                <p> <TitleItem> Dias de Viagem:</TitleItem> {trip.durationInDays}</p>
+                <p> <TitleItem> Data:</TitleItem> {trip.date}</p>
+                <br/>
+              </TripDiv>
+            </AllTripsDiv>
+          )
+        })}
+        <Btns onClick={goBack}>Voltar</Btns>
+        <Btns onClick={goToApplicationFormPage}>Increva-se</Btns>
+    </MainDiv>
   )
 
 }
