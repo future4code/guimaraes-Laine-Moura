@@ -7,7 +7,7 @@ import { url } from '../../App'
 export default function LoginPage() {
 
 const navigate = useNavigate()
-const goToHomePage = () => navigate(-1)
+const goToHomePage = () => navigate('/')
 const [email, setEmail] = useState('')
 const [password, setPassword] = useState('')
 
@@ -24,7 +24,7 @@ const login = () => {
     .post(`${url}/login`, body)
     .then(res => {
       localStorage.setItem('token', res.data.token)
-      navigate('adminHomePage')
+      navigate('/admin/trips/list')
     })
     .catch((err) => err.response)
 }
@@ -32,8 +32,8 @@ const login = () => {
   return (
     <div>
       <p>LoginPage</p>
-        <input type={'email'} placeholder={'Nome'} value={email} onChange={handleEmail}/>
-        <input type={'password'} placeholder={'Senha'} value={password} onChange={handlePassword}/>
+        <input type={'email'} placeholder={'Nome'} value={email} onChange={handleEmail} required/>
+        <input type={'password'} placeholder={'Senha'} value={password} onChange={handlePassword} required/>
         <br/>
       <br/>
       <button onClick={goToHomePage}>Voltar</button>
