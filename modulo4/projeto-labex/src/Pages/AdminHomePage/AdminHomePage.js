@@ -42,25 +42,25 @@ export default function AdminHomePage() {
 
   return (
       <MainDiv>
-      {listTrips?.trips.map((trip) => {
-        return (
-          <div onClick={() => goToTripDetails(trip.id)} key={trip.id}>
-              <TripDiv> {trip.name}
-                <BtnDelTrip onClick={(e) => {
-                  deleteTrip(trip)
-                  {listTrips()}
-                  e.stopPropagation();
-                }}>
-                <TrashcanImg src='https://img.icons8.com/office/344/delete--v1.png'/>
-              </BtnDelTrip>
-            </TripDiv>
-            <br/>
-          </div>
-        )
-      })}
-      <Btns onClick={goToHomePage}>Voltar</Btns>
-      <Btns onClick={createTrip}>Criar Viagem</Btns>
-      <Btns onClick={logout}>Logout</Btns>
-        </MainDiv>
+        {listTrips?.trips.map((trip) => {
+          return (
+            <div onClick={() => goToTripDetails(trip.id)} key={trip.id}>
+                <TripDiv> {trip.name}
+                  <BtnDelTrip onClick={(e) => {
+                    deleteTrip(trip)
+                    {listTrips()}
+                    e.stopPropagation();
+                  }}>
+                  <TrashcanImg src='https://img.icons8.com/office/344/delete--v1.png'/>
+                </BtnDelTrip>
+              </TripDiv>
+              <br/>
+            </div>
+          )
+        })}
+        <Btns onClick={goToHomePage}>Voltar</Btns>
+        <Btns onClick={createTrip}>Criar Viagem</Btns>
+        <Btns onClick={logout}>Logout</Btns>
+     </MainDiv>
 );
 }
