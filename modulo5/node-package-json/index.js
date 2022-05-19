@@ -38,3 +38,12 @@ switch(operacao){
 
 console.log(`EXERCÍCIO 2: Resposta: ${total}`);}
 
+//Exercício 3
+
+{
+    const newTask = process.argv[2]
+    const tasksList = []
+    tasksList.push(newTask)
+    console.log(tasksList);
+}
+
