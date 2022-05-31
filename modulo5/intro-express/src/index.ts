@@ -42,6 +42,12 @@ app.get("/users", (req, res) => {
     }
     res.status(201).send(users)
 }) 
+type post = {
+    id: number | string,
+    title: string,
+    body: string,
+    userId: number | string
+}
 
 const posts:post[] = [
     {
@@ -58,13 +64,6 @@ const posts:post[] = [
     }
 
 ]
-
-type post = {
-    id: number | string,
-    title: string,
-    body: string,
-    userId: number | string
-}
 
 app.listen(3003, () => {
     console.log('Servidor rodando na url http://localhost:3003');
