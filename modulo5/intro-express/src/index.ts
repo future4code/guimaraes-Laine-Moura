@@ -43,6 +43,22 @@ app.get("/users", (req, res) => {
     res.status(201).send(users)
 }) 
 
+const posts:post[] = [
+    {
+        id: "01",
+        title: "Itália",
+        body: "Lembrança dessa viagem incrível!",
+        userId: 1
+    },
+    {
+        id: "02",
+        title: "Creme",
+        body: "Achadinho!",
+        userId: 2
+    }
+
+]
+
 type post = {
     id: number | string,
     title: string,
