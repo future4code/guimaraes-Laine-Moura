@@ -36,6 +36,13 @@ const users:user[] = [
     
 ]
 
+app.get("/users", (req, res) => {
+    if(!users.length){
+        res.status(401).send("Vazio")
+    }
+    res.status(201).send(users)
+}) 
+
 app.listen(3003, () => {
     console.log('Servidor rodando na url http://localhost:3003');
 })
