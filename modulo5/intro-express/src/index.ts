@@ -18,6 +18,24 @@ type user = {
     website: string
 }
 
+const users:user[] = [
+    {
+        id: 1,
+        name: "Camila Coradi",
+        phone:11987654321,
+        email: "camila@email.com",
+        website: "camila.dev.com",
+    },
+    {
+        id: 2,
+        name: "Tiago Hennig",
+        phone:51987654321,
+        email: "tiago@email.com",
+        website: "tiago.dev.com",
+    }
+    
+]
+
 app.listen(3003, () => {
     console.log('Servidor rodando na url http://localhost:3003');
 })
