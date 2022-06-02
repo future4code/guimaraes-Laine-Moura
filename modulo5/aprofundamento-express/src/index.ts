@@ -22,6 +22,22 @@ type toDo = {
     completed: boolean
 }
 
+const task:toDo[] = [
+    {
+        userId: 100,
+        id:1,
+        title:"comprar banana",
+        completed: false
+    },
+    {
+        userId: 100,
+        id:2,
+        title:"comprar batata",
+        completed: false
+    },
+
+]
+
 app.listen(3003, () => {
     console.log('Servidor rodando na url http://localhost:3003');
 })
