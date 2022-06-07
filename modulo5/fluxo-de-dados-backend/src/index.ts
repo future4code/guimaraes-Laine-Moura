@@ -6,6 +6,11 @@ import { AddressInfo } from "net";
 const app = express();
 app.use(express.json());
 
+
+app.get("/test", (req: Request, res: Response)=>{
+  res.status(200).send("Alô!");
+})
+
 const server = app.listen(process.env.PORT || 3003, () => {
     if (server) {
       const address = server.address() as AddressInfo;
