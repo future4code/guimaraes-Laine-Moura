@@ -2,12 +2,15 @@ console.log("Hello, world!")
 
 import express from 'express'
 import { Request, Response } from 'express'
-
+import {users} from './data'
 import { AddressInfo } from "net";
-
 const app = express();
-
 app.use(express.json());
+
+
+app.get('/users', (req: Request, res: Response) => {
+  res.status(200).send('Usuários estão aqui')  
+}) 
 
 
 
