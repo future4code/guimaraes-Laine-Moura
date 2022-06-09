@@ -1,10 +1,10 @@
-type arrayDeProdutos = {
+export type arrayDeProdutos = {
   id: string,
   name: string,
   price:number
 }
 
-const produtos:arrayDeProdutos[] = [
+export const produtos:arrayDeProdutos[] = [
   {
     id: "1",
     name: "Camisola",
