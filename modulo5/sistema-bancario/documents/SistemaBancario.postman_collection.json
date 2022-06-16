@@ -1,0 +1,141 @@
+{
+	"info": {
+		"_postman_id": "0219a48b-6f33-4de9-b59f-5fa0a2d68ddb",
+		"name": "SistemaBancario",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetClients",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"description": "Retorna os clientes do banco."
+			},
+			"response": []
+		},
+		{
+			"name": "CreateAccount",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Laíne Moura\",\r\n    \"cpf\": \"13013013050\",\r\n    \"birthday\": \"08/06/1991\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3003/users/",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"users",
+						""
+					]
+				},
+				"description": "Devem ser informados, através do ```body```, nome, cpf e data de nascimento. Com validação para testar maioridade."
+			},
+			"response": []
+		},
+		{
+			"name": "Balance",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "cpf",
+						"value": "33041288054",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3003/myaccount",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"myaccount"
+					]
+				},
+				"description": "Endpoint que retorna valor disponível na conta. Necessário passar o valor do *cpf* pelo ```headers```."
+			},
+			"response": []
+		},
+		{
+			"name": "Deposit",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cpf\":\"13013013050\",\r\n    \"name\":\"Laíne Moura\",\r\n    \"cash\": 40\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3003/myaccount",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"myaccount"
+					]
+				},
+				"description": "Endpoint para adicionar um valor à conta, através do nome, cpf e valor pelo ```body```."
+			},
+			"response": []
+		},
+		{
+			"name": "Payments",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"paymentDate\" : \"\",\r\n    \"value\" : 10250,\r\n    \"description\" : \"Viagem\",\r\n    \"cpf\": \"33041288054\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3003/myaccount/payments",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"myaccount",
+						"payments"
+					]
+				},
+				"description": "Necessário preencher os valores do ```body```, *paymentDate*, *value*, *description* e *cpf*.\nSe o a data for uma string vazia, o pagamento não será agendado, ocorrerá no mesmo dia."
+			},
+			"response": []
+		}
+	]
+}
