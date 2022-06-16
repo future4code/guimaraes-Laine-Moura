@@ -32,3 +32,10 @@ WHERE id=c; #Error Code: 1054. Unknown column 'c' in 'where clause'/Coluna desco
 UPDATE Actor
 SET name = "Sônia Braga"
 WHERE id=500; #Não retornou erro, mas não afetou nenhuma linha.
+
+#EXERCICIO3
+#A)
+DELETE FROM Actor WHERE name = "Fernanda Montenegro";
+select * from Actor;
+#B)
+DELETE FROM Actor WHERE gender = "male" AND salary >1000000;
