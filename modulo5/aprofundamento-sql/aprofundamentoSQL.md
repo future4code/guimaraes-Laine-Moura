@@ -149,3 +149,48 @@ DELETE FROM MOVIE WHERE id= "001";
 UPDATE MOVIE
 SET synopsis = "Casal troca de corpo"
 WHERE id = 001;
+
+#EXERCICIO7
+#A)
+select * 
+from MOVIE
+where rating >7.5;
+
+#B)
+select avg(rating)
+from MOVIE;
+
+#C)
+select count(*)
+from MOVIE;
+
+#D)
+select count(*)
+from MOVIE
+where release_Date > CURDATE(); #CURDATE() retorna a presente data
+
+#E)
+select MAX(rating)
+from MOVIE;
+
+#F)
+select min(rating)
+from MOVIE;
+
+#EXERCICIO8
+#A)
+select * 
+from MOVIE
+order by title;
+
+#B)
+select *
+from MOVIE
+order by title
+limit 5;
+
+#C)
+select *
+from MOVIE
+order by release_Date < curdate()
+limit 3;
