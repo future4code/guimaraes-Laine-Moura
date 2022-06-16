@@ -52,3 +52,30 @@ select count(*) from Actor where gender = "female";
 
 #D)
 select SUM(salary) from Actor;
+
+#EXERCICIO5
+#A) Conta quantos atores de cada gênero estão presentes na tabela
+SELECT COUNT(*), gender
+FROM Actor
+GROUP BY gender;
+
+#B)
+SELECT id, name
+FROM Actor
+ORDER BY name DESC;
+
+#C)
+SELECT *
+FROM Actor
+ORDER BY salary;
+
+#D)
+SELECT *
+FROM Actor
+ORDER BY salary DESC
+LIMIT 3;
+
+#E)
+SELECT AVG(salary), gender 
+FROM Actor
+GROUP BY gender;
