@@ -79,3 +79,73 @@ LIMIT 3;
 SELECT AVG(salary), gender 
 FROM Actor
 GROUP BY gender;
+
+#EXERCICIO6
+
+CREATE TABLE MOVIE(
+	id VARCHAR(255) PRIMARY KEY,
+    title VARCHAR(255) NOT NULL UNIQUE,
+    synopsis TEXT NOT NULL,
+    release_Date DATE NOT NULL,
+    rating INT NOT NULL
+);
+
+
+INSERT INTO MOVIE(id, title, synopsis, release_Date, rating)
+VALUES(
+  "001",
+  "Se eu fosse você",
+  "Cláudio e Helena são casados há muitos anos e enfrentam a rotina do casamento. Um dia eles são atingidos por um fenômeno inexplicável e trocam de corpos",
+  "2006-01-06",
+  7
+);
+
+INSERT INTO MOVIE(id, title, synopsis, release_Date, rating)
+VALUES(
+  "002",
+  "Doce mãe",
+ "Dona Picucha, uma animada senhora de 85 anos, sempre causa grandes confusões. A vida dela e dos seus quatro filhos sofre uma reviravolta depois que Zaida, empregada e amiga de Dona Picucha, anuncia que vai se casar e não poderá mais morar com ela",
+  "2012-12-27",
+  10
+);
+
+INSERT INTO MOVIE(id, title, synopsis, release_Date, rating)
+VALUES(
+  "003",
+  "Dona flor e seus dois maridos",
+  "Dona Flor é uma sedutora professora de culinária casada com Vadinho, que só quer saber de farras e jogatina nas boates. A vida de abusos acaba por acarretar sua morte precoce.",
+  "2017-11-02",
+  8
+);
+
+INSERT INTO MOVIE(id, title, synopsis, release_Date, rating)
+VALUES(
+  "004",
+  "O auto da compadecida",
+"As aventuras de João Grilo e Chicó, dois nordestinos pobres que vivem de golpes para sobreviver. Eles estão sempre enganando o povo de um pequeno vilarejo, inclusive o temido cangaceiro Severino de Aracaju, que os persegue pela região.",
+  "2000-09-10",
+  10
+);
+
+
+SELECT * FROM MOVIE;
+describe MOVIE;
+
+#A)
+ALTER TABLE MOVIE ADD playing_limit_date DATE;
+
+#B)
+ALTER TABLE MOVIE CHANGE rating rating FLOAT;
+
+#C)
+UPDATE MOVIE
+SET	playing_limit_date = "2022-12-31"
+WHERE id = "001";
+
+#D) 0 row(s) affected Rows matched: 0  Changed: 0  Warnings: 0 / Nenhuma linha foi afetada porque a chave não existe
+
+DELETE FROM MOVIE WHERE id= "001";
+
+UPDATE MOVIE
+SET synopsis = "Casal troca de corpo"
+WHERE id = 001;
