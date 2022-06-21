@@ -35,7 +35,7 @@ genderCounter("male")
     .then(result => console.log(result))
     .catch(err => console.log(err))
 
-/* Exercício 1
+/* Exercício 
  A) */
  const updateActor = async (id: string, salary:number) => {
     await connection("Actor")
@@ -72,3 +72,22 @@ const avgSalary = async (gender: string): Promise<any> => {
   avgSalary("male")
     .then(result => console.log(result))
     .catch(err => console.log(err));
+
+/* Exercício 3
+A) */
+
+app.get("/actor/:id", async (req: Request, res: Response) => {
+    try {
+      const id = req.params.id;
+      const result = await connection.raw(`
+      SELECT * FROM Actor WHERE id = "${id}"
+    `);
+
+      res.status(200).send(result[0])
+
+    } catch(e) {
+        console.error({e})
+        return res.status(500).send("Algo deu errado.")
+    }
+  });
+
