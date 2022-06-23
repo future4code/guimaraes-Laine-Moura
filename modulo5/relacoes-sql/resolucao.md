@@ -1,4 +1,5 @@
 ```
+//Exercício 1
 //A) A chave estrangeira é a chave capaz de relacionar duas tabelas
 
 //B)
@@ -18,11 +19,27 @@ values (
 "004"
 );
 
-//C) Error Code: 1452. Cannot add or update a child row: a foreign key constraint fails (`guimaraes-4211326-laine-moura`.`Rating`, CONSTRAINT `Rating_ibfk_1` FOREIGN KEY (`movie_id`) REFERENCES `MOVIE` (`id`)) / Falha na chave estrangeira
+//C) Error Code: 1452. Cannot add or update a child row: a foreign key constraint fails  / Falha na chave estrangeira
 
 //D)
 ALTER TABLE Movie DROP COLUMN rating;
 
-//E) Error Code: 1451. Cannot delete or update a parent row: a foreign key constraint fails (`guimaraes-4211326-laine-moura`.`Rating`, CONSTRAINT `Rating_ibfk_1` FOREIGN KEY (`movie_id`) REFERENCES `MOVIE` (`id`)) / Não posso apagar pois a tabela está relacionada
+//E) Error Code: 1451. Cannot delete or update a parent row: a foreign key constraint fails  Não posso apagar pois a tabela está relacionada
+
+//Exercício 2
+//A) Cria a tabela MovieCast com as propriedades movie_id e actor_id. Fazendo a referência das chaves estrangeiras e suas propriedades.
+
+//B) 
+# movie_id	actor_id
+004	002
+004	004
+004	005
+002	002
+003	002
+003	006
+
+//D)
+Error Code: 1452. Cannot add or update a child row: a foreign key constraint fails / Falha de chave estrangeira não localizada
+
 
 ```
