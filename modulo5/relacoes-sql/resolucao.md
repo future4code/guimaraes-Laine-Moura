@@ -41,5 +41,12 @@ ALTER TABLE Movie DROP COLUMN rating;
 //D)
 Error Code: 1452. Cannot add or update a child row: a foreign key constraint fails / Falha de chave estrangeira não localizada
 
+// Exercício 3
+//A)
+Checa se a condição está certa NA condição passada. ON / NA
+
+//B)
+SELECT m.id as movie_id, r.rate as rating FROM MOVIE m
+INNER JOIN Rating r ON m.id = r.movie_id;
 
 ```
