@@ -1,7 +1,0 @@
-node_modules/
-build/
-.env
-package-lock.json
-tsconfig.json
-package.json
-src/
