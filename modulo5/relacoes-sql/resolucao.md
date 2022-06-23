@@ -31,12 +31,12 @@ ALTER TABLE Movie DROP COLUMN rating;
 
 //B) 
 # movie_id	actor_id
-004	002
-004	004
-004	005
-002	002
-003	002
-003	006
+    004	        002
+    004        	004
+    004        	005
+    002        	002
+    003        	006
+    003        	002
 
 //D)
 Error Code: 1452. Cannot add or update a child row: a foreign key constraint fails / Falha de chave estrangeira não localizada
