@@ -4,5 +4,4 @@ build/
 package-lock.json
 tsconfig.json
 package.json
-src/app.ts
-src/connection.ts
+src/
