@@ -41,6 +41,27 @@ app.get("/user/:id", async (req: Request, res: Response) => {
     }
 });
 
+app.put("user/edit/:id"), async (req: Request, res: Response) => {
+    try {
+        const id = req.params.id
+        if (!id) { throw new Error("Parâmetro id não enviado") }
+
+        const { name, nickname, email } = req.body
+        if (name === "" || nickname === "" || email === "") { throw new Error("Parâmetros não podem ser vazios.") }
+
+        await connection("ToDoListUser")
+            .update({
+                name,
+                nickname,
+                email
+            })
+            .where({ id })
+                res.status(200).send(`Atualização dos dados do usuário ${nickname} realizadas com sucesso"`)
+    } catch (error: any) {
+        res.status(500).send(error.message);
+    }
+}
+
 
 app.get('/test', (req, res) => {
     res.status(200).send("Servidor em pé!");
