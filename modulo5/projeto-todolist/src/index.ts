@@ -56,11 +56,36 @@ app.put("user/edit/:id"), async (req: Request, res: Response) => {
                 email
             })
             .where({ id })
-                res.status(200).send(`Atualização dos dados do usuário ${nickname} realizadas com sucesso"`)
+        res.status(200).send(`Atualização dos dados do usuário ${nickname} realizadas com sucesso"`)
     } catch (error: any) {
         res.status(500).send(error.message);
     }
 }
+
+app.post("/task", async (req: Request, res: Response) => {
+    const { id, title, status, limitDate, createUserId } = req.body;
+    try {
+        if (!title || !status || !limitDate) { throw new Error("Parâmetros necessário não foi enviado.") }
+        if (title === "" || status === "" || limitDate === "") { throw new Error("Parâmetros passados pelo body não podem ser vazios") }
+
+        await connection.raw(`
+        INSERT INTO ToDoListTask 
+        (id, title, status, limitDate, createUserId)
+        VALUES(
+        "${id}",
+        "${title}",
+        "${status}",
+        "${limitDate.split("/").reverse().join("/")}",
+        "${createUserId}"
+        )
+        `);
+
+
+        res.status(201).send("Tarefa criada com sucesso!");
+    } catch (error: any) {
+        res.status(500).send(error.message);
+    }
+});
 
 
 app.get('/test', (req, res) => {
