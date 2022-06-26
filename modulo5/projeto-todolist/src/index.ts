@@ -88,6 +88,22 @@ app.post("/task", async (req: Request, res: Response) => {
 });
 
 
+app.get("/task/:id", async (req: Request, res: Response) => {
+    const id: string = req.params.id;
+    try {
+        const idFromTask = await connection.raw(`
+        SELECT * FROM ToDoListTask
+        WHERE id = '${id}'
+     `);
+        res.status(200).send(idFromTask[0][0]);
+    } catch (error: any) {
+        res.status(500).send(error.message);
+    }
+});
+
+
+
+
 app.get('/test', (req, res) => {
     res.status(200).send("Servidor em pé!");
 });
