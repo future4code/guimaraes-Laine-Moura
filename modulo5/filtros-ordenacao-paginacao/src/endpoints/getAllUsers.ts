@@ -48,3 +48,28 @@ try {
    }
 }
 
+export const getUsersOrdered = async (req: Request, res: Response): Promise<void> => {
+   let statusCode = undefined;
+
+   try {
+      let sort = req.query.sort as string
+      let order = req.query.order as string
+
+      if (!sort) { sort='email' }
+      if (order?.toUpperCase() !== 'ASC' || order?.toUpperCase() !== 'DESC') { order = 'ASC' }
+
+      const users = await connection('aula48_exercicio')
+      .orderBy(sort,order)
+      .select()
+
+      if(users.length < 1) {
+         statusCode = 404
+         throw new Error("Nenhum usuário foi encontrado com os parâmetros passados.")
+      }
+
+      res.status(200).send(users)
+
+   } catch (error: any) {
+      res.status(statusCode || 400).send(error.message)
+   }
+}
