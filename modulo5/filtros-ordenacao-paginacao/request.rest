@@ -5,7 +5,7 @@ GET http://localhost:3003/users
 GET http://localhost:3003/users?name=Maju
 ###
 // ordenação by name ASC
-GET GET http://localhost:3003/users/Teacher
+GET http://localhost:3003/users/Teacher
 ###
 // paginação
 
