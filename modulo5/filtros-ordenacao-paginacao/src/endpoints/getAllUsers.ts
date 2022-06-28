@@ -3,28 +3,48 @@ import { connection } from "../data/connection"
 import { user } from "../types"
 
 
-export default async function selectAllUsers():Promise<any> {
-    const result = await connection.raw(`
-       SELECT id, name, email, type
-       FROM aula48_exercicio;
-    `)
- 
-    return result[0]
- }
+export const getUsers = async (req: Request, res: Response): Promise<void> => {
+   let statusCode = undefined;
+   try {
+      let name = req.query.name
 
-export const getAllUsers = async(req: Request,res: Response): Promise<void> =>{
-    try {
-       const users = await selectAllUsers()
- 
-       if(!users.length){
-          res.statusCode = 404
-          throw new Error("No recipes found")
-       }
- 
-       res.status(200).send(users)
-       
-    } catch (error) {
-       console.log(error)
-       res.send(error.message || error.sqlMessage)
-    }
- }
+      if (!name) { name = '%' }
+
+      const users = await connection('aula48_exercicio')
+         .where('name', 'like', `%${name}%`)
+
+      if (!users.length) {
+         statusCode = 404
+         throw new Error("Sinto muito. Não foi encontrado nenhum  usuário com esse nome. :(");
+      }
+
+      res.status(200).send(users)
+
+   } catch (error: any) {
+      res.status(statusCode || 400).send(error.message);
+   }
+}
+
+export const getUserByType = async (req: Request, res: Response): Promise<void> => {
+   let statusCode = undefined;
+
+try {
+   let type = req.params.type
+   
+   if(!type) { type ='%' }
+
+   const users = await connection('aula48_exercicio')
+   .where('type', '=', `${type}`)
+
+   if(!users.length) {
+   statusCode = 404
+   throw new Error("O tipo procurado para o usuário não existe. :(") 
+   }
+   
+   res.status(200).send(users)
+
+} catch (error: any) {
+   res.status(statusCode || 400).send(error.message);
+   }
+}
+
