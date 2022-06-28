@@ -73,3 +73,32 @@ export const getUsersOrdered = async (req: Request, res: Response): Promise<void
       res.status(statusCode || 400).send(error.message)
    }
 }
+
+export const getUsersPag = async (req: Request, res: Response): Promise<void> => {
+   let statusCode = undefined;
+
+   try {
+      let size = Number(req.query.size)
+      let page = Number(req.query.page)
+
+      if(isNaN(size) || !size) {size = 10}
+      if(isNaN(page) || !page) {page = 1}
+
+      let offset = size * (page-1)
+
+      const users = await connection('aula48_exercicio')
+      .limit(size)
+      .offset(offset)
+      .select()
+
+      if(!users.length){
+         statusCode = 404
+         throw new Error("Nenhum usuário encontrado");
+      }
+
+      res.status(200).send(users)
+
+   } catch (error: any) {
+      res.status(statusCode || 400).send(error.message)
+   }
+}
