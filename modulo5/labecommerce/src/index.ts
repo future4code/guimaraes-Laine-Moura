@@ -1,6 +1,7 @@
-import app from './app'
-import createCharacter from './endpoints/createCharacter'
-import getAllCharacters from './endpoints/getAllCharacters'
+import connection from './connection';
+import app from './app';
+import { Request, Response } from 'express';
 
-//app.get("caminho", funcao)
-
+app.get('/test', (req, res) => {
+    res.status(200).send("Servidor em pé!");
+});
