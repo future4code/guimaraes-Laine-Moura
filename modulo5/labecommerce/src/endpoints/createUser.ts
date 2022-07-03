@@ -3,7 +3,7 @@ import app from "../app"
 import { v4 as generateId } from 'uuid';
 import connection from "../connection";
 
-export const createUser = app.post("/users", async (req: Request, res: Response): Promise<void> => {
+export const createUser = async (req: Request, res: Response): Promise<void> => {
     let statusCode = 500;
     try {
         const { name, email, password } = req.body
@@ -22,4 +22,4 @@ export const createUser = app.post("/users", async (req: Request, res: Response)
             res.status(201).send("Usuário criado com sucesso!")
 
     } catch (error:any) { res.status(statusCode || 400).send(error.message) }
-})
+}
