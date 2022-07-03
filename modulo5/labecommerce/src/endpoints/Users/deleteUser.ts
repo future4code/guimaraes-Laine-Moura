@@ -1,6 +1,5 @@
 import { Request, Response } from "express"
-import app from "../app"
-import connection from "../connection";
+import connection from "../../connection";
 
 export const deleteUser =  async (req: Request, res: Response): Promise<void> => {
     let statusCode = 500;

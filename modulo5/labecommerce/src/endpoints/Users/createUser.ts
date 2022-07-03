@@ -1,7 +1,7 @@
 import { Request, Response } from "express"
-import app from "../app"
+import app from "../../app"
 import { v4 as generateId } from 'uuid';
-import connection from "../connection";
+import connection from "../../connection";
 
 export const createUser = async (req: Request, res: Response): Promise<void> => {
     let statusCode = 500;

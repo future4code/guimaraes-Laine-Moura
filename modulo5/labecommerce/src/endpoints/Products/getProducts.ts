@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import connection  from "../connection";
+import connection  from "../../connection";
 
 export const getProducts = async (req: Request, res: Response): Promise<void> => {
   let statusCode = 500;
