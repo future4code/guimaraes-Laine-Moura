@@ -8,7 +8,7 @@ export const getProducts = async (req: Request, res: Response): Promise<void> =>
     let sort = req.query.sort as string
     let order = req.query.order as string
 
-    if (!sort) { sort='name' }
+    if (!sort) { sort='price' }
     if (order?.toUpperCase() !== 'ASC' || order?.toUpperCase() !== 'DESC') { 
       order  }
 
