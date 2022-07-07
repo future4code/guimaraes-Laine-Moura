@@ -24,4 +24,6 @@
 
  <h2>🗃 Documentação</h2>
 
-[Postman](https://documenter.getpostman.com/view/19701937/UzJLPGK9)
+[Documentação - Postman](https://documenter.getpostman.com/view/19701937/UzJLPGK9)
+- [x] Deploy realizado
+```https://webservices-laine.herokuapp.com/```
