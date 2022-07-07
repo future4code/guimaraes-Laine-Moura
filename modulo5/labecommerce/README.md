@@ -19,5 +19,9 @@
 
 <h2>🌟 Desafios</h2>
 
-- [x] Cria endpoint que torna possível ordenar os produtos por nome
+- [x] Cria endpoint que torna possível ordenar os produtos por preço
 ```http://localhost:3003/products?order=asc```
+
+ <h2>🗃 Documentação</h2>
+
+[Postman](https://documenter.getpostman.com/view/19701937/UzJLPGK9)
