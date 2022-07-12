@@ -3,17 +3,7 @@
 //b Apareceu uma vez
 
 //c getters - pega o atributo // setters - define
-class Transaction {
-    private description: string 
-    private value: number 
-    private date: string
 
-    constructor(description: string,
-         value: number, date: string) {
-            this.description = description, 
-            this.value = value, 
-            this.date = date }
-}
 class UserAccount {
     private cpf: string; 
     private name: string; 
@@ -34,3 +24,25 @@ class UserAccount {
     public getTransactions(): Transaction[] { return this.transactions; }
 }
 const primeiroUsuario: UserAccount = new UserAccount("1", "lainermoura", 31);
+
+//Exercício 2
+class Transaction {
+    private date: string;
+    private value: number;
+    private description: string;
+    
+    constructor(date: string, value: number, description: string) {
+      this.date = date;
+      this.value = value;
+      this.description = description
+    }
+
+  public getDescription():string { return this.description }
+  public getValue():number { return this.value }
+  public getDate():string { return this.date }
+
+  }
+
+  const transacao1:Transaction = new Transaction ("Deposito 1", 1000, "12/07/2022")
+  console.log(transacao1);
+  
