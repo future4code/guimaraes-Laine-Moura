@@ -71,7 +71,7 @@ const client1: Client = {
   };
   
   console.log(client1);
-
-  R: Não é possível imprimir pois mostra apenas a função
+a) Quais propriedades você conseguiu imprimir? Teve alguma que não foi possível? Por que isso aconteceu?
+R: Não é possível imprimir o resultado de  calculateBill() pois mostra apenas a função
  */
 
