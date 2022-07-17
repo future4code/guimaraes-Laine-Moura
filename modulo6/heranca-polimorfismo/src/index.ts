@@ -3,6 +3,7 @@ import app from './app';
 import { Request, Response } from 'express';
 import {User} from './Classes/User'
 import {Customer} from './Classes/Customer'
+import { Client } from './Interface/Client';
 
 app.get('/test', (req: Request, res: Response) => {
     res.status(200).send("Servidor em pé!");
@@ -53,4 +54,24 @@ const customer1 = new User(
 const introduceYourself = customer1.interoduceYourself();
 console.log(introduceYourself);
 */
+
+
+/* POLIMORFISMO
+
+Exercício 1
+
+const client1: Client = {
+    name: "MP",
+    registrationNumber: 1,
+    consumedEnergy: 20000,
+    calculateBill: () => {
+      let totalBill = 2;
+      return totalBill;
+    },
+  };
+  
+  console.log(client1);
+
+  R: Não é possível imprimir pois mostra apenas a função
+ */
 
