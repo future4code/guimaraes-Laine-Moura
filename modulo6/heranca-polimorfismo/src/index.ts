@@ -1,4 +1,4 @@
-import connection from './connection';
+import {BaseDatabase} from './BaseDatabase/BaseDatabase';
 import app from './app';
 import { Request, Response } from 'express';
 

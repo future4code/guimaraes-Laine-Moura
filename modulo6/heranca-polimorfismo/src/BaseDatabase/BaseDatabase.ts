@@ -5,7 +5,10 @@ dotenv.config({
    // path: './env'
 });
 
-const connection = knex({
+
+export class BaseDatabase {
+
+protected connection = knex({
    client: "mysql",
    connection: {
       host: process.env.DB_HOST,
@@ -15,6 +18,6 @@ const connection = knex({
       database: process.env.DB_SCHEMA,
       multipleStatements: true
    },
-});
+})
 
-export default connection
+}
