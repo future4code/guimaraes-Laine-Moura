@@ -6,7 +6,8 @@
   "scripts": {
     "start": "tsc && node ./build/index.js",
     "dev": "ts-node-dev ./src/index.ts",
-    "user": "ts-node-dev ./src/Classes/User.ts"
+    "user": "ts-node-dev ./src/Classes/User.ts",
+    "customer": "ts-node-dev ./src/Classes/Customer.ts"
   },
   "keywords": [],
   "author": "",
