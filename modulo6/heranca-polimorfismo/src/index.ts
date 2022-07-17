@@ -42,7 +42,7 @@ Exercício 3
 a) Seria possível imprimir a senha (password) atrelada a essa instância? Por quê?
 R: Sim porque ela está se estendendo da classe User
 
-Exercício 4
+Exercício 4 e 5
 
 const customer1 = new User(
     "1",
