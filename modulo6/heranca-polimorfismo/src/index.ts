@@ -73,5 +73,24 @@ const client1: Client = {
   console.log(client1);
 a) Quais propriedades você conseguiu imprimir? Teve alguma que não foi possível? Por que isso aconteceu?
 R: Não é possível imprimir o resultado de  calculateBill() pois mostra apenas a função
- */
 
+
+Exercício 2
+
+export abstract class Place {
+    constructor(protected cep: string) {}
+  
+    public getCep(): string {
+      return this.cep;
+    }
+  }
+  
+   const place = new Place("123456789")
+
+a) Mesmo sabendo que não é possível, tente criar uma instância dessa classe (ou seja: new Place(...)). Qual foi o erro que o Typescript gerou?
+
+R: Não é possível criar uma instância de uma classe abstrata
+
+b) Pense e responda: o que precisaríamos fazer para conseguir efetivamente criar uma instância dessa classe?
+R: Estender às outras classes, tornando possível o acesso às propriedades
+*/
