@@ -27,14 +27,16 @@ class User {
       return `Olá, sou ${this.name}. Bom dia!`;
     }
   }
-// Exercíco 1
+// Exercício 1
 /*
 a) Seria possível imprimir a senha (password) atrelada a essa instância?
 R: Sim
 b) Quantas vezes a mensagem "Chamando o construtor da classe User" foi impressa no terminal?
 R: Foi impressa 1 vez
-*/
+
 
 const user1 = new User("1", "email@email.com", "teste", "123456");
 console.log(user1)
+
+*/
 
