@@ -37,4 +37,9 @@ export class Customer extends User {
     "123456",
     "200"
   );
-  console.log(customer1);*/
+  console.log(customer1);
+  
+  Exercício 3
+  a) Seria possível imprimir a senha (password) atrelada a essa instância? Por quê?
+  R: Sim porque ela está se estendendo da classe User
+  */
