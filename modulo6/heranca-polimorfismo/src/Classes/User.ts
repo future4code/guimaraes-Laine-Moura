@@ -24,7 +24,7 @@ export class User {
       return this.name;
     }
     public interoduceYourself(): string {
-      return `Olá, sou ${this.name}. Bom dia!`;
+      return `Olá, sou ${this.name}. Bom dia!!`;
     }
   }
   
