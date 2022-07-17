@@ -1,8 +1,10 @@
 import {BaseDatabase} from './BaseDatabase/BaseDatabase';
 import app from './app';
 import { Request, Response } from 'express';
+import {User} from './Classes/User'
+import {Customer} from './Classes/Customer'
 
-app.get('/test', (req, res) => {
+app.get('/test', (req: Request, res: Response) => {
     res.status(200).send("Servidor em pé!");
 });
 
@@ -40,4 +42,15 @@ Exercício 3
 a) Seria possível imprimir a senha (password) atrelada a essa instância? Por quê?
 R: Sim porque ela está se estendendo da classe User
 
+Exercício 4
+
+const customer1 = new User(
+    "1",
+    "email@email.com",
+    "Fulano",
+    "123456",
+  );
+const introduceYourself = customer1.interoduceYourself();
+console.log(introduceYourself);
 */
+
