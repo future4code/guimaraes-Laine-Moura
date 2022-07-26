@@ -5,13 +5,14 @@ export class UserDatabase extends BaseDatabase {
 
    insertUser = async(user: user):Promise<void> => {
       try {
-      await UserDatabase.connection.insert({
+      await UserDatabase.connection
+      .insert({
          id: user.id,
          name: user.name,
-         nickname: user.nickname,
          email: user.email,
          password: user.password
-      }).into('Architecture_User')
+      })
+      .into('User_Arq')
       } catch (error:any) {
          throw new Error(error.message)
       }

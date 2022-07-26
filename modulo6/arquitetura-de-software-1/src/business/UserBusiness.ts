@@ -1,12 +1,12 @@
 import { UserDatabase } from "../data/UserDatabase"
+import { v4 as generateId } from 'uuid'
 
 export class UserBusiness {
     createUser = async ( input:any ):Promise<void> => {
         try {
-            const {name, nickname, email, password} = input
+            const {name, email, password} = input
            if (
               !name ||
-              !nickname ||
               !email ||
               !password
            ) {
@@ -17,9 +17,8 @@ export class UserBusiness {
 
            const useDatabase = new UserDatabase()
            await useDatabase.insertUser({
-            id,
+            id: generateId(),
             name,
-            nickname,
             email ,
             password 
            })
