@@ -21,4 +21,16 @@ export default class UserController {
             res.status(400).send({ error: error.message });
         }
     }
+
+     getAllUsers = async (req: Request, res: Response) : Promise<void> =>  {	
+        try {
+
+            const users = await new UserBusiness().getAllUsers();
+
+            res.send(users).status(200);
+
+        } catch (error:any) {
+            res.send({ message: error.message }).status(error.status);
+        }
+    }
 }
