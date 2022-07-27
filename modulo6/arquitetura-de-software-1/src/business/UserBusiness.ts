@@ -35,4 +35,13 @@ export class UserBusiness {
       return await new UserDatabase().getAllUsers();
   }
 
+   deleteUser = async (input: {id:string}) =>{
+
+    if(!input.id){
+        throw new Error("Insira um id!")
+    }
+
+    return await new UserDatabase().deleteUser(input.id);
+}
+
 }

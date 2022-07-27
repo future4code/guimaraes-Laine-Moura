@@ -1,0 +1,16 @@
+POST http://localhost:3003/createUser
+Content-Type: application/json
+
+{
+   "name": "Mose Schrute",
+   "email": "idontknowhowtousethis@dundermifflin.com",
+   "password": "DWIGHTismycousin"
+}
+
+###
+
+GET http://localhost:3003/all
+
+###
+
+DELETE http://localhost:3003/b2e4335f-4815-4d6e-98de-c85c30ae3ffd
