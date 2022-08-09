@@ -1,9 +1,8 @@
 import { v4 as generateId } from 'uuid'
 import { User } from '../model/User'
-import { UserRepository } from '../Repository/UserRepository'
+import { UserDatabase } from "../data/UserDatabase";
 
 export class UserBusiness {
-    constructor(private userDatabase:UserRepository){}
     async createUser ( name: string, email: string, password: string): Promise<void> {
         let message = 'Ok'
         let statusCode = 400
@@ -22,10 +21,11 @@ export class UserBusiness {
             password
         )
 
-        await this.userDatabase.createUser(user)
+        const userDB = new UserDatabase()
+        await userDB.createUser(user)
     }
 
     getAllUsers = async (): Promise<void> => {
-        return await this.userDatabase.getUser();
+        return await new UserDatabase().getUser();
       }
 }

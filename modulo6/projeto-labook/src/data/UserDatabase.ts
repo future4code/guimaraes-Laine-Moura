@@ -1,9 +1,8 @@
 import { User } from '../model/User'
 import { BaseDatabase } from './BaseDatabase'
-import { UserRepository } from '../Repository/UserRepository'
 
-export class UserDatabase extends BaseDatabase implements UserRepository{
-    public createUser = async (user: User):Promise<void>=> {
+export class UserDatabase extends BaseDatabase {
+    async createUser(user: User):Promise<void> {
         await UserDatabase.connection('labook_users')
         .insert({
             id: user.getId(),
@@ -13,7 +12,7 @@ export class UserDatabase extends BaseDatabase implements UserRepository{
         })
     }
 
-    public  getUser = async ():Promise<void> => { 
+    async getUser():Promise<void> { 
         try {
             return await UserDatabase.connection('labook_users')
         }
