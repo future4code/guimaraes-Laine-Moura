@@ -1,24 +1,32 @@
-import { User } from '../model/User'
-import { BaseDatabase } from './BaseDatabase'
+import { BaseDatabase } from "./BaseDatabase";
+import { user } from "../types/user";
 
 export class UserDatabase extends BaseDatabase {
-    async createUser(user: User):Promise<void> {
-        await UserDatabase.connection('labook_users')
-        .insert({
-            id: user.getId(),
-            name: user.getName(),
-            email: user.getEmail(),
-            password: user.getPassword()
-        })
-    }
+  private TABLE_NAME = "labook_users";
 
-    async getUser():Promise<void> { 
-        try {
-            return await UserDatabase.connection('labook_users')
-        }
-        catch (error: any) {
-            throw new Error(error.sqlMessage);
-            
-        }
+  public createUser = async ({
+    id,
+    name,
+    email,
+    password,
+  }: user): Promise<void> => {
+    await UserDatabase.connection
+      .insert({ id, name, email, password })
+      .into(this.TABLE_NAME);
+  };
+
+  public getAllUsers = async (): Promise<user[]> => {
+    try {
+      const users: user[] = [];
+      const result = await UserDatabase.connection()
+        .select("*")
+        .from(this.TABLE_NAME);
+      for (let user of result) {
+        users.push(user);
+      }
+      return users;
+    } catch (error: any) {
+      throw new Error(error.sqlMessage || error.message);
     }
+  };
 }

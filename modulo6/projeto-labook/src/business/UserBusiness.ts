@@ -1,31 +1,23 @@
-import { v4 as generateId } from 'uuid'
-import { User } from '../model/User'
-import { UserDatabase } from "../data/UserDatabase";
+import { userInputDTO } from "../model/userInputDTO";
+import { generateId } from "../services/generateId";
+import { user } from "../types/user";
+import { UserRepository } from "../repository/UserRepository";
 
 export class UserBusiness {
-    async createUser ( name: string, email: string, password: string): Promise<void> {
-        let message = 'Ok'
-        let statusCode = 400
-
-        if(!email || !name || !password) {
-            message = 'Nome, email e senha precisam ser fornecidos'
-            statusCode = 406
-            throw new Error("message");
-            
-        }
-        const id = generateId()
-        const user = new User (
-            id, 
-            name, 
-            email, 
-            password
-        )
-
-        const userDB = new UserDatabase()
-        await userDB.createUser(user)
+  constructor(private userDatabase: UserRepository) {}
+  public createUser = async (input: userInputDTO): Promise<void> => {
+    try {
+      const { name, email, password } = input;
+      const id: string = generateId();
+      const user: user = { id, name, email, password };
+      await this.userDatabase.createUser(user);
+    } catch (error: any) {
+      throw new Error(error.message);
     }
+  };
 
-    getAllUsers = async (): Promise<void> => {
-        return await new UserDatabase().getUser();
-      }
+  public getAll = async (): Promise<user[]> => {
+    const result = await this.userDatabase.getAllUsers();
+    return result;
+  };
 }

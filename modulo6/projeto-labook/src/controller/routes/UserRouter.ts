@@ -1,7 +1,13 @@
-import express from 'express'
-import { UserController } from '../../controller/UserController'
+import express from "express";
+import { UserBusiness } from "../../business/UserBusiness";
+import { UserDatabase } from "../../data/UserDatabase";
+import { UserController } from "../UserController";
 
-export const userRouter = express.Router()
-const userController = new UserController()
+export const userRouter = express.Router();
 
-userRouter.post("/signup", userController.signup)
+const userDatabase = new UserDatabase();
+const userBusiness = new UserBusiness(userDatabase);
+const userController = new UserController(userBusiness);
+
+userRouter.post("/create", (req, res) => userController.createUser(req, res));
+userRouter.get("/getAll", (req, res) => userController.getAll(req, res));
