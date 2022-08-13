@@ -4,6 +4,7 @@
          name VARCHAR(255) NOT NULL,
          email VARCHAR(255) UNIQUE NOT NULL,
          password VARCHAR(255) NOT NULL);
+         
 
  CREATE TABLE IF NOT EXISTS labook_posts(
          id VARCHAR(255) PRIMARY KEY,
@@ -14,3 +15,10 @@
          author_id VARCHAR(255),
          FOREIGN KEY (author_id) REFERENCES labook_users (id)
       );
+CREATE TABLE IF NOT EXISTS relational_friends(
+        id VARCHAR(255) PRIMARY KEY,
+        friend1_id VARCHAR(255), 
+        FOREIGN KEY (friend1_id) REFERENCES labook_users(id), 
+        friend2_id VARCHAR(255), 
+        FOREIGN KEY (friend2_id) REFERENCES labook_users(id)
+        );
