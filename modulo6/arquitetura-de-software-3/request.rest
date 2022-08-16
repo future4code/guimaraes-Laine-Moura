@@ -1,0 +1,21 @@
+POST http://localhost:3003/user/create
+Content-Type: application/json
+
+{
+    "name": "Laíne",
+    "email": "laíne@email.com",
+    "password": "lala1991"
+}
+###
+
+
+POST http://localhost:3003/movie/create
+Content-Type: application/json
+
+{
+    "title": "O fabuloso destino de Amélie Poulain",
+    "description": "Amélie é uma jovem introspectiva e sonhadora. Ela ajuda todos ao seu redor sem que eles saibam. Até que sua vida vira do avesso quando se apaixona por uma dessas pessoas.",
+    "duration_in_minutes": 120,
+    "year_of_release": 2001
+}
+
