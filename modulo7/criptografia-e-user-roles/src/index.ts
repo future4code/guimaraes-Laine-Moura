@@ -1,6 +1,5 @@
-import { app } from "./controller/app"
-import { Request, Response} from 'express'
+import app from "./controller/app"
+import { userRouter } from "./controller/userRouter"
 
-app.get("/test", (req: Request, res: Response) => {
-    res.status(200).send("Servidor em pé! 👣");
-  });
+
+app.use('/user/', userRouter)
