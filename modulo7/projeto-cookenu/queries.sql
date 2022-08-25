@@ -1,0 +1,8 @@
+-- Active: 1658879023818@@35.226.146.116@3306@guimaraes-4211326-laine-moura
+CREATE TABLE IF NOT EXISTS Cookenu_users (
+    id VARCHAR(64) PRIMARY KEY,
+    name VARCHAR(64) NOT NULL,
+    email VARCHAR(64) NOT NULL,
+    password VARCHAR(64) NOT NULL, 
+    role VARCHAR(10) NOT NULL
+);
