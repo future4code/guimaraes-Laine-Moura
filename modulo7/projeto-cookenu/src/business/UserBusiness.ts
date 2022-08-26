@@ -9,7 +9,7 @@ const idGenerator = new IdGenerator()
 const hashManager = new HashManager()
 const authenticator = new Authenticator()
 
-export class userBusiness {
+export class UserBusiness {
     private userDatabase: UserDatabase
     constructor() {
         this.userDatabase = new UserDatabase()
