@@ -45,3 +45,9 @@ export class InvalidRole extends CustomError {
         super(422, 'A propriedade "role" deve ser "admin" ou "user".')
     }
 }
+
+export class UserNotFound extends CustomError{ 
+    constructor(){
+        super(404, "Usuário não encontrado")
+    }
+}
