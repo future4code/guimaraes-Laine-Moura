@@ -1,6 +1,6 @@
 import { UserDatabase } from "../data/UserDatabase";
 import { CustomError, EmailAlreadyInUse, FieldsNotProvided, InvalidEmail, InvalidName, InvalidPassword, InvalidRole, UserNotFound } from "../error/CustomError";
-import { LoginInputDTO, user, UserInputDTO } from "../model/User";
+import { LoginInputDTO, user, UserInputDTO, UserOutput } from "../model/User";
 import { Authenticator } from "../services/Authenticator";
 import { HashManager } from "../services/HashManager";
 import { IdGenerator } from "../services/IdGenerator";
@@ -79,5 +79,23 @@ export class UserBusiness {
             throw new CustomError(400, error.message)
         }
     }
+
+    public getOwnProfile = async (token: string): Promise<UserOutput> => {
+		try {
+
+			const tokenData = authenticator.getTokenData(token)
+
+			const user = await this.userDatabase.getProfile(tokenData.id)
+
+			if(!user) {throw new UserNotFound()}
+
+			return user
+
+		} catch (error: any) {
+			throw new CustomError(400, error.message)
+		}
+	}
+
+
 
 }

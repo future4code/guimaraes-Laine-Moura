@@ -33,5 +33,15 @@ export class UserDatabase extends BaseDatabase {
         }
     }
 
-    
+    public getProfile = async (id: string): Promise<UserOutput> => {
+        try {
+            const result = await UserDatabase.connection(this.TABLE)
+                .select('*')
+                .where('id', 'like', id)
+            return result[0]
+        } catch (error: any) {
+            throw new CustomError(404, error.message)
+        }
+    }
+
 }
