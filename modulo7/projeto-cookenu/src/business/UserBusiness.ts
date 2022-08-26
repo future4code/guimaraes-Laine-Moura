@@ -1,6 +1,6 @@
 import { UserDatabase } from "../data/UserDatabase";
-import { CustomError, EmailAlreadyInUse, FieldsNotProvided, InvalidEmail, InvalidName, InvalidPassword, InvalidRole, UserNotFound } from "../error/CustomError";
-import { LoginInputDTO, user, UserInputDTO, UserOutput } from "../model/User";
+import { CustomError, EmailAlreadyInUse, FieldsNotProvided, InvalidEmail, InvalidName, InvalidPassword, InvalidRole, InvalidToken, UserNotFound } from "../error/CustomError";
+import {  getOtherProfileInputDTO, LoginInputDTO, user, UserInputDTO, UserOutput } from "../model/User";
 import { Authenticator } from "../services/Authenticator";
 import { HashManager } from "../services/HashManager";
 import { IdGenerator } from "../services/IdGenerator";
@@ -95,6 +95,49 @@ export class UserBusiness {
 			throw new CustomError(400, error.message)
 		}
 	}
+
+    public getOtherProfile = async (input: getOtherProfileInputDTO): Promise<UserOutput> => {
+
+		try {
+			const { token, id } = input
+
+			const tokenData = authenticator.getTokenData(token)
+
+			const userExists = await this.userDatabase.getProfile(tokenData.id)
+
+			if(!userExists) {throw new InvalidToken()}
+
+			const user = await this.userDatabase.getProfile(id)
+
+			if(!user) {throw new UserNotFound()}
+
+			return user
+
+		} catch (error: any) {
+			throw new CustomError(400, error.message)
+		}
+	}
+
+
+	public getAllUsers = async (token: string): Promise<UserOutput[]> => {
+		try {
+
+			const tokenData = authenticator.getTokenData(token)
+
+			const userExists = await this.userDatabase.getProfile(tokenData.id)
+
+			if (!userExists) {throw new InvalidToken()}
+
+			const user = await this.userDatabase.getAllUsers()
+
+			if (!user) {throw new CustomError(404, "Ops! Não encontramos nenhum usuário aqui.");}
+
+			return user
+
+		} catch (error: any) {
+			throw new CustomError(400, error.message)
+		}
+	};
 
 
 

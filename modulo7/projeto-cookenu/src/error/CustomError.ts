@@ -51,3 +51,9 @@ export class UserNotFound extends CustomError{
         super(404, "Usuário não encontrado")
     }
 }
+
+export class InvalidToken extends CustomError{ 
+    constructor(){
+        super(404, "Esse token é inválido")
+    }
+}
