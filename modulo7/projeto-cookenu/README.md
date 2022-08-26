@@ -2,3 +2,5 @@
  <h1 align="center"><strong>Projeto Cookenu</b></strong></h1></div>
 
  - [x] - Singup
+ - [x] - Login
+ - [x] - GetOwnProfile
