@@ -4,3 +4,5 @@
  - [x] - Singup
  - [x] - Login
  - [x] - GetOwnProfile
+ - [x] - GetOtherProfile
+ - [x] - GetAllUsers
