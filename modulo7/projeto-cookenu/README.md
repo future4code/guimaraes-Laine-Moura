@@ -6,3 +6,6 @@
  - [x] - GetOwnProfile
  - [x] - GetOtherProfile
  - [x] - GetAllUsers
+ - [x] - createRecipes
+ - [x] - getAllRecipes
+ - [x] - getRecipe
