@@ -57,3 +57,15 @@ export class InvalidToken extends CustomError{
         super(404, "Esse token é inválido")
     }
 }
+
+export class MissingInformation extends CustomError{
+    constructor() {
+        super(400, 'É necessário completar os campos "title" e "description".')
+    }
+}
+
+export class MissingToken extends CustomError{
+    constructor() {
+        super(400, 'É necessário fornecer um token.')
+    }
+}
