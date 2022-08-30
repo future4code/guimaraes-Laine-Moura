@@ -20,13 +20,28 @@ export class RecipeController {
 
             await recipeBusiness.createRecipe(input)
 
-            res.status(201).send("Receita criada com sucesso!")
+            res.status(201).send(`Receita de ${title} criada com sucesso!`)
 
         } catch (error:any) {
 
         }
     }
 
+    public getAllRecipes = async (req: Request, res: Response) => {
+
+        try {
+
+            const token = req.headers.authorization as string
+
+            const result = await recipeBusiness.getAllRecipes(token)
+
+            res.status(200).send(result)
+
+        } catch (error:any) {
+            res.status(400).send(error.message)
+        }
+
+    }
 
     public getRecipe = async (req: Request, res: Response) => {
 
@@ -51,20 +66,6 @@ export class RecipeController {
     }
 
 
-    public getAllRecipes = async (req: Request, res: Response) => {
 
-        try {
-
-            const token = req.headers.authorization as string
-
-            const result = await recipeBusiness.getAllRecipes(token)
-
-            res.status(200).send(result)
-
-        } catch (error:any) {
-            res.status(400).send(error.message)
-        }
-
-    }
 
 }
